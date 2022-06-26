@@ -1,0 +1,63 @@
+
+.main{
+box-sizing: border-box;
+position: absolute;
+width: 248px;
+height: 1080px;
+left: 0px;
+top: 0px;
+
+background: #7D56A5;
+border: 1.5px solid #3D2072;
+box-shadow: 4px 0px 8px rgba(0, 0, 0, 0.08);
+}
+.buttonDashBoard{
+    /* Dashboard */
+
+width: 80px;
+height: 16px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 16px;
+/* identical to box height, or 114% */
+
+text-align: center;
+
+color: #252525;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+.buttonClassRoom{
+    /* ClassroomS */
+
+
+width: 87px;
+height: 16px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 16px;
+/* identical to box height, or 114% */
+
+text-align: center;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}

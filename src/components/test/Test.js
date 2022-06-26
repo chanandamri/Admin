@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Table from "../Admin/Table";
 
 function Test() {
@@ -11,6 +12,19 @@ function Test() {
       <Table list={list} />
     </div>
   );
+=======
+import '../Admin/nav'
+import Nav from '../Admin/nav'
+
+
+
+function Test() {
+    return (
+        <>
+<Nav></Nav>
+        </>
+    )
+>>>>>>> faadf387fbd2808af52e463391d34365bf2eb2b3
 }
 
 export default Test;
