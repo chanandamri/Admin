@@ -1,0 +1,15 @@
+.row{
+    
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 1201px;
+    height: 71px;
+    justify-content: space-evenly;
+    
+    background: #FFFFFF;
+    border: 1.5px solid #252525;
+    border-radius: 20px;
+    display: flex;
+ 
+}

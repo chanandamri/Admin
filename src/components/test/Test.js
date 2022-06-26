@@ -1,15 +1,9 @@
-import '../Admin/Nav'
-import Nav from '../Admin/Nav'
-
-
 
 function Test() {
-    return (
-        <>
-<Nav></Nav>
-        </>
-    )
+  return (
+    <div>
+    </div>
+  );
 }
 
-
-export default Test
+export default Test;
