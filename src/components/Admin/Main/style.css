@@ -1,0 +1,23 @@
+.buttonListClass{
+    position: absolute;
+width: 379px;
+height: 49px;
+left: 1178px;
+top: 976px;
+}
+
+.addButton{
+position: absolute;
+/* width: 210px;
+height: 48px; */
+left: 1423px;
+top: 127px;
+}
+
+.mainTable{
+position: absolute;
+width: 1201px;
+height: 71px;
+left: 355.31px;
+top: 209px;
+}
