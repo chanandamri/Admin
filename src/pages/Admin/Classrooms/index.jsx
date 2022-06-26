@@ -1,11 +1,12 @@
+import Nav from '../../../components/Admin/nav'
 import styles from './style.module.css'
 
 // Creator : Team E - Chanan
 function Classroom() {
     return <>
         <Nav />
-        <Header />
-        <Main />
+        {/* <Header />
+        <Main /> */}
     </>
 }
 
