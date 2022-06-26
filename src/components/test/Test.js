@@ -1,8 +1,14 @@
+import '../Admin/nav'
+import Nav from '../Admin/nav'
 
-function Test(){
-    return <>
-    
-    </>
+
+
+function Test() {
+    return (
+        <>
+<Nav></Nav>
+        </>
+    )
 }
 
 
