@@ -1,18 +1,21 @@
 import './style.css';
-import {useParams} from 'react-router-dom'
+import {Link, useParams} from 'react-router-dom'
 
 // Creator : Team E - Chanan
 function Header(){
-    const {title} = useParams()
-    return <>
+    const title = useParams()
+    return( <>
     <div className="admin-header">
-        <div className="header-title">{title} .</div>
-        <div className="header-title-routh">routh .</div>
-        <div className="bell">bell .</div>
-        <div className="user-logo">user .</div>
+        <img id="logo1" src={require("./logo1.png")} alt="logo1" />
+        <img id="logo2" src={require("./logo2.png")} alt="logo2" />
+        <div className="header-title">
+            <Link to="/classrooms">Classrooms</Link>
+           {/* <div>{title}</div> */}
+        </div>
+        <img id="user-logo" src={require("./user-logo.png")} />
     </div>
     </>
-}
+)}
 
 
 export default Header

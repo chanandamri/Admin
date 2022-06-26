@@ -1,5 +1,6 @@
 
-
 export default function Test() {
-  return (<></>)
+  return (
+    <div></div>
+  )
 }
