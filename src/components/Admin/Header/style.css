@@ -1,0 +1,18 @@
+.admin-header {
+    box-sizing: border-box;
+    /* position: absolute;
+    width: 1672px; */
+    height: 71px;
+    /* left: 248px;
+    top: 0px; */
+    /* background: blue; */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+}
+.user-logo{
+    justify-self: right;
+}
+.bell{
+    display: inline;
+}
