@@ -3,16 +3,28 @@
     /* position: absolute;
     width: 1672px; */
     height: 71px;
-    /* left: 248px;
-    top: 0px; */
-    /* background: blue; */
+    width: 100vw;
+    /* left: 248px; */
+    top: 0px;
+    margin-top: 0;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 100px 100px auto 100px;
+    text-align: center;
+    background-color: #7D56A5;
+    border-bottom:1px solid #252525;
+    
 }
-.user-logo{
-    justify-self: right;
+#logo1{
+    grid-column: 0-1;
 }
-.bell{
-    display: inline;
+#logo2{
+    
+    grid-column: 0-1;
+}
+.header-title{
+    grid-column: 2-3;
+}
+#user-logo{
+    grid-column: 2-3;
 }
