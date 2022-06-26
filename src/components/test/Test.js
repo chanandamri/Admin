@@ -1,9 +1,5 @@
-import Header from '../Admin/Header'
-function Test(){
-    return <>
-    <Header></Header>
-    </>
+export default function Test() {
+  return (
+    <div>Test</div>
+  )
 }
-
-
-export default Test
