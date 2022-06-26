@@ -1,5 +1,5 @@
-import '../Admin/nav'
-import Nav from '../Admin/nav'
+import '../Admin/Nav'
+import Nav from '../Admin/Nav'
 
 
 
