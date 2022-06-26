@@ -3,9 +3,13 @@
 # dependencies
 /node_modules
 /.pnp
+<<<<<<< HEAD
+/.pnp.js
+=======
 .pnp.js
 
-/test
+>>>>>>> 6241eb2696ddb63416c40e3b7460cfc4179c753a
+/src/components/test
 # testing
 /coverage
 
