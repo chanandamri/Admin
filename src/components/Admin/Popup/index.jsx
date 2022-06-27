@@ -1,3 +1,4 @@
+import EditClass from '../EditClass';
 import Input from '../Input'
 import MainButton from '../MainButton'
 import './style.css'
@@ -6,7 +7,7 @@ function onSubmit(e) {
     console.log("hi! i'm alive!", e);
 }
 
-// Creator : Team A - Shahar
+// Creator : Team E - Chanan
 function Popup() {
     return <div>
         <div className='popup-outbox'>
@@ -25,14 +26,7 @@ function Popup() {
 
             </div>
             <div className='popup-body'>
-                <Input type="text" title="input title" />
-                <Input type="dropdown" title="dropdown title" />
-            </div>
-            <div className='popup-fotter'>
-                <form id="addclass" onSubmit={onSubmit}>
-                    <MainButton>Cancel</MainButton>
-                    <MainButton form="addclass">Add</MainButton>
-                </form>
+                <EditClass />
             </div>
 
 
