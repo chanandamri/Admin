@@ -3,7 +3,8 @@
     
 }
 .row{
-    font-size: xx-large;
+    /* margin: 10px; */
+    font-weight: bold;
     box-sizing: border-box;
 
     position: absolute;
