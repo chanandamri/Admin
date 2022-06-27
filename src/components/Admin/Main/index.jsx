@@ -1,4 +1,6 @@
 import MainButton from '../MainButton'
+import ButtonListClass from '../ButtonListClass'
+
 import './style.css'
 
 // Creator : Team E - chanan
@@ -13,12 +15,12 @@ function Main(){
 
     <div className='mainTable' >
     {/* בנייה על ידי אברהם */}
-    {/* <MainTable/> */}
+    {/* <Table/> */}
     </div>
 
     <div className='buttonListClass' >
         {/* בנייה על ידי יוסף */}
-        {/* <ButtonListClass/> */}
+        <ButtonListClass/>
     </div>
 
     </>
