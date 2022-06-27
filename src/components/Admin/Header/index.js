@@ -18,7 +18,7 @@ function Header(props) {
                 <Link className="link2" to="/">
                 <img className="logo2" src={require("./logo2.png")} alt="logo2" />
                 </Link>
-                <Link className={props?"header-title":"header-title:gray"} to="/classrooms">
+                <Link className={currentPage?"header-title":"header-title:gray"} to="/classrooms">
                     Classrooms
                 </Link>
                 <div className="header-title">-c{currentPage}</div>
