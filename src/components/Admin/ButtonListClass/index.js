@@ -45,8 +45,7 @@ function OneButtonListClass(txt,id,isactive) {
   arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];// temporary array for training
   if (arr.length > 8) {
     for (let i = arr.length; i >= 0; i -= 8) {
-      ;
-      listbutton.push(num++);
+       listbutton.push(num++);
     }
   console.log(listbutton+arr);}
   return listbutton
