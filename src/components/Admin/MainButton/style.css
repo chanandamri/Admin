@@ -1,11 +1,11 @@
-.buttonAddClass{
-box-sizing: border-box;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding: 16px 33px;
-gap: 8px;
+.buttonAddClass {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 33px;
+    gap: 8px;
 
 /* position: absolute; */
 width:max-content;
@@ -13,27 +13,33 @@ height: 48px;
 /* left: 1423px;
 top: 127px; */
 
-background: #F39C12;
-border: 2px solid #252525;
-box-shadow: 2px 2px 0px #D35400;
-border-radius: 80px;
-
-/* שייך לטקסט */
-/* width: 144px;
+    background: #F39C12;
+    border: 2px solid #252525;
+    box-shadow: 2px 2px 0px #D35400;
+    border-radius: 80px;
+    margin-right: 15px;
+    /* שייך לטקסט */
+    /* width: 144px;
 height: 16px; */
 
 
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 600;
-font-size: 14px;
-line-height: 16px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
 
-text-align: center;
-color: #FFFFFF;
+    text-align: center;
+    color: #FFFFFF;
 
-flex: none;
-order: 0;
-flex-grow: 0;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
 
+}
+
+.buttonWhite {
+    background-color: #FFFFFF;
+    color: #252525;
+    ;
 }

@@ -3,9 +3,10 @@ import "./style.css";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 
 // Creator : Team E - Chanan: Chagay & Ariel
-function Header() {
-    const {classId} = useParams();
-    console.log(classId);
+function Header(props) {
+    const {currentPage} = props;
+    // const {classId} = useParams();
+    // console.log(classId);
     // const [currentRoute, setCurrentRoute] = useSearchParams()
 
     return (
@@ -17,10 +18,10 @@ function Header() {
                 <Link className="link2" to="/">
                 <img className="logo2" src={require("./logo2.png")} alt="logo2" />
                 </Link>
-                <Link className={classId?"header-title":"header-title:gray"} to="/classrooms">
+                <Link className={currentPage?"header-title":"header-title:gray"} to="/classrooms">
                     Classrooms
                 </Link>
-                <div className="header-title">-c{classId}</div>
+                <div className="header-title">-c{currentPage}</div>
                 <img className="user-logo" src={require("./user-logo.png")} />
             </div>
         </>

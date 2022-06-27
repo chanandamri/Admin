@@ -1,9 +1,16 @@
 
 
 export default function Addteacherpopup(){
+    const onSubmit=(e)=>{
+        return(
+            e.preventDefault()
+            
+
+        )
+    }
     return(
         <>
-        <form>
+        <form onSubmit={onSubmit}>
         <label htmlFor="teacherName">name 
         <input  name="teacherName" placeholder="enter your name" />
         </label>
