@@ -18,14 +18,23 @@ function Header(props) {
                 <Link className="link2" to="/">
                 <img className="logo2" src={require("./logo2.png")} alt="logo2" />
                 </Link>
-                <Link className={currentPage?"header-title":"header-title:gray"} to="/classrooms">
+                <Link className={currentPage?"header-title:gray":"header-title"} to="/classrooms">
                     Classrooms
                 </Link>
-                <div className="header-title">-c{currentPage}</div>
+                {currentPage?<PageName page={currentPage} />:""}
                 <img className="user-logo" src={require("./user-logo.png")} />
             </div>
         </>
     );
+}
+
+function PageName({page}){
+    return(
+    <div className="header-title">
+        <span className="header-title:gray">/ </span>
+        {page}
+    </div>
+    )
 }
 
 export default Header;

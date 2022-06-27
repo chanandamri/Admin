@@ -12,15 +12,15 @@ function Main() {
             </MainButton>
         </div>
 
-        <div className='mainTable' >
-            {/* בנייה על ידי אברהם */}
-            {/* <MainTable/> */}
-        </div>
+    <div className='mainTable' >
+    {/* בנייה על ידי אברהם */}
+    {/* <Table/> */}
+    </div>
 
-        <div className='buttonListClass' >
-            {/* בנייה על ידי יוסף */}
-            <ButtonListClass />
-        </div>
+    <div className='buttonListClass' >
+        {/* בנייה על ידי יוסף */}
+        <ButtonListClass/>
+    </div>
 
     </>
 }
