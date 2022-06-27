@@ -1,27 +1,25 @@
-import MainButton from '../MainButton'
+
 import './style.css'
+import { Routes, Route} from "react-router-dom";
+// import Test from '../../test/Test';
+// import AdminLayout from '../AdminLayout/AdminLayout';
+import Classrooms from '../../../pages/Admin/Classrooms';
 
 // Creator : Team E - chanan
 function Main(){
-    return <>
+    return( <>
 
-    <div className='addButton' >
-    <MainButton>
-    Add New Classroom
-    </MainButton>
-    </div>
-
-    <div className='mainTable' >
-    {/* בנייה על ידי אברהם */}
-    {/* <MainTable/> */}
-    </div>
-
-    <div className='buttonListClass' >
-        {/* בנייה על ידי יוסף */}
-        {/* <ButtonListClass/> */}
-    </div>
-
-    </>
+             <Routes>
+                <Route path="/" element={<Classrooms />} />
+                {/* <Route path="/test" element={<Test />} />
+                <Route path="/layout" element={<AdminLayout/>} /> */}
+                 {/* <Route path="/login" element={< />} /> 
+                  <Route path="/home" element={< />} />
+             <Route path="/singUp" element={< />} />  */}
+            </Routes>
+            
+   
+    </>)
 }
 
 

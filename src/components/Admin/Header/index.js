@@ -1,6 +1,6 @@
 import * as React from "react"
 import "./style.css";
-import { Link, useParams, useSearchParams } from "react-router-dom";
+import { Link, useParams} from "react-router-dom";
 
 // Creator : Team E - Chanan: Chagay & Ariel
 function Header() {
@@ -21,7 +21,7 @@ function Header() {
                     Classrooms
                 </Link>
                 <div className="header-title">-c{classId}</div>
-                <img className="user-logo" src={require("./user-logo.png")} />
+                <img className="user-logo" src={require("./user-logo.png")} alt="image1"/>
             </div>
         </>
     );
