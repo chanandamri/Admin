@@ -64,8 +64,16 @@ border-radius: 20px;
 transform: rotate(-0.55deg);
 }
 .head{
-    margin: 100px;
+    margin: 70px;
 }
 .list{
-    margin: 100px;
+    margin: 70px;
 }
+.buttons{
+    display: flex;
+    align-items: center
+}
+.img_3{
+    margin: 30px;
+}
+

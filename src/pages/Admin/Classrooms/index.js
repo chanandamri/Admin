@@ -9,9 +9,17 @@ import ButtonListClass from '../../../components/Admin/ButtonListClass'
 // Creator : Team E - Chanan
 function Classroom() {
     return <>
-        <MainButton />
-        <Table />
-        <ButtonListClass />
+        <div className='addButton' >
+            <MainButton onClick={onclick = (() => console.log("good"))} >
+                Add New Classroom
+            </MainButton>
+        </div>
+        <div className='mainTable' >
+            <Table />
+        </div>
+        <div className='buttonListClass' >
+            <ButtonListClass />
+        </div>
 
     </>
 }
