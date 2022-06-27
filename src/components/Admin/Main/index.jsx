@@ -1,3 +1,5 @@
+import MainButton from '../MainButton'
+import ButtonListClass from '../ButtonListClass'
 import './style.css'
 import { Routes, Route } from "react-router-dom";
 // import Test from '../../test/Test';

@@ -10,13 +10,10 @@ import './style.css'
 function EditClass() {
     const { popupActive, setPopupActive } = useContext(popupActiveContext)
 
-    console.log(popupActive);
     function onSubmit(e) {
         e.preventDefault()
         console.log("hi! i'm alive!", e);
         setPopupActive(false)
-        // console.log(popupActive);
-
     }
     return <div>
         <form id="addclass" onSubmit={onSubmit}>
