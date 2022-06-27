@@ -26,9 +26,9 @@ let backimg = (
   </svg>
 );
 
-function OneButtonListClass(txt) {
+function OneButtonListClass(txt,id) {
   return (
-    <div className="box">
+    <div className="box" id={id}>
       <div className="backbox">
         <div className="upbox">
           <div id="imagebacknext">{txt}</div>
@@ -45,16 +45,17 @@ function ButtonListClass(arr) {
   const listbutton = [];
   if (arr.length > 8) {
     for (let i = arr.length; i >= 0; i -= 8) {
+      ;
+      listbutton.push(num++);
     }
   }
-  console.log(listbutton);
   return (
     <div className="muneList">
-      {OneButtonListClass(backimg)}
+      {OneButtonListClass(backimg,"backinlist")}
       {listbutton.map((e) => {
-        return OneButtonListClass(e);
+        return OneButtonListClass(e,e);
       })}
-      {OneButtonListClass(nextimg)}
+      {OneButtonListClass(nextimg,"nextinlist")}
     </div>
   );
 }
