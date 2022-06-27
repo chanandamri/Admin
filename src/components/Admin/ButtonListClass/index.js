@@ -1,5 +1,5 @@
 import "./style.css";
-
+ const arrey = [];
 let nextimg = (
   <svg
     width="9"
@@ -26,11 +26,11 @@ let backimg = (
   </svg>
 );
 
-function OneButtonListClass(txt,id) {
+function OneButtonListClass(txt,id,isactive) {
   return (
     <div className="box" id={id}>
       <div className="backbox">
-        <div className="upbox">
+        <div className={"upbox "+((txt==isactive) ? "active" :"")}>
           <div id="imagebacknext">{txt}</div>
         </div>
       </div>
@@ -38,22 +38,29 @@ function OneButtonListClass(txt,id) {
   );
 }
 
-// Creator : Team E - yosef schmidt
-function ButtonListClass(arr) {
-  let num=1
-  arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];// temporary array for training
+
+ const creatList=(arr)=> {
   const listbutton = [];
+ let num=1
+  arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];// temporary array for training
   if (arr.length > 8) {
     for (let i = arr.length; i >= 0; i -= 8) {
       ;
       listbutton.push(num++);
     }
-  }
+  console.log(listbutton+arr);}
+  return listbutton
+}
+
+// Creator : Team E - yosef schmidt
+function ButtonListClass(arrey) {
+  let isactive=1// צריך לשלוף מפאראם או מלפי איך שמחליטים מה להציג על המסך ולשים כאן
+ let listbutton=creatList(arrey)
   return (
     <div className="muneList">
       {OneButtonListClass(backimg,"backinlist")}
       {listbutton.map((e) => {
-        return OneButtonListClass(e,e);
+        return OneButtonListClass(e,e,isactive);
       })}
       {OneButtonListClass(nextimg,"nextinlist")}
     </div>
