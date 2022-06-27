@@ -28,6 +28,12 @@ export default function Addteacherpopup(){
             e.preventDefault()
             const formData = Object.fromEntries(new FormData(e.target));
             console.log(formData);
+
+            fetch(url,{method: 'POST', data: JSON.stringify(formData)})
+            .then(()=>{
+                alert("Teacher added successfully");
+                //send email to teacher
+            })
     }
     return(
         <>
