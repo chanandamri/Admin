@@ -1,9 +1,6 @@
 
-function Test(){
-    return <>
-    
-    </>
+export default function Test() {
+  return (
+    <div></div>
+  )
 }
-
-
-export default Test

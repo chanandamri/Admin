@@ -1,0 +1,28 @@
+.admin-header {
+    height: 55px;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    background-color: #7d56a5;
+    border-bottom: 1px solid #252525;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+}
+.logo1 {
+    margin: 5px 5px 5px 30px;
+    width: 45px; ;
+}
+.logo2 {
+    margin-right: auto;
+    width: 60px; ;
+}
+.header-title {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    color: white;
+}
+.user-logo {
+    margin-left: auto;
+    margin-right: 20px;
+    width: 27px; ;
+}
