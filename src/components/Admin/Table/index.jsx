@@ -61,23 +61,39 @@ function Table() {
                     return <div className="text_row">{value}</div>;
                   })}
                   <div>
-                    {list ? (
-                      <div className="text_row" onClick={() => deleteClick(i)}>
-                        Delete
+                    {flag ? (
+                      <div
+                        className="buttons"
+
+                      >
+                        <div onClick={() => {
+                          alert("edit");
+                        }}>
+                          <img src={require("./edit-2.png")} />
+                        </div>
+                        <div
+                          className="text_row"
+                          onClick={() => deleteClick(v.classroom_ID)}
+                        >
+                          <img src={require("./trash-2.png")} />
+                        </div>
+                        {list ? (
+                          <div className="text_row" onClick={() => deleteClick(i)}>
+                            Delete
+                          </div>
+                        ) : (
+                          <div></div>
+                        )}
                       </div>
-                    ) : (
-                      <div></div>
-                    )}
-                  </div>
                 </div>
-                <br />
-              </div>
-            </>
-          );
+                  <br />
+                </div>
+              </>
+              );
         })}
-      </div>
+            </div>
     </div>
-  );
+      );
 }
 
-export default Table;
+      export default Table;
