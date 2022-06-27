@@ -1,0 +1,30 @@
+.popup-outbox {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 454px;
+    height: 348.53px;
+    left: 50%;
+    top: 50%;
+
+    background: #7D56A5;
+    border: 1.5px solid #252525;
+
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    transform: rotate(2.11deg);
+}
+
+.popup-inbox {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 454px;
+    height: 343px;
+    left: 50%;
+    top: 50%;
+
+    background: #FFFFFF;
+    border: 1.5px solid #252525;
+    border-radius: 20px;
+}
