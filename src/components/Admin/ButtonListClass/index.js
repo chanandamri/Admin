@@ -45,6 +45,7 @@ function ButtonListClass(arr) {
   const listbutton = [];
   if (arr.length > 8) {
     for (let i = arr.length; i >= 0; i -= 8) {
+       listbutton.push(num++);
     }
   }
   console.log(listbutton);
