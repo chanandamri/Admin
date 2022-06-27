@@ -1,6 +1,9 @@
+import Popup from "../Admin/Popup";
 
 export default function Test() {
   return (
-    <div></div>
+    <div>
+      <Popup />
+    </div>
   )
 }
