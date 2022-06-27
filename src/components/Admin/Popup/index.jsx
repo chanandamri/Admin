@@ -1,14 +1,13 @@
+import { useContext, useEffect } from 'react';
+import { setPopupActive } from '../../../context/Admin/PopupActive'
 import EditClass from '../EditClass';
 import Input from '../Input'
 import MainButton from '../MainButton'
 import './style.css'
-function onSubmit(e) {
-    e.preventDefault()
-    console.log("hi! i'm alive!", e);
-}
 
 // Creator : Team E - Chanan
 function Popup() {
+
     return <div>
         <div className='popup-outbox'>
 

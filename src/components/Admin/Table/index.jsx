@@ -66,11 +66,11 @@ function Table() {
                     {flag ? (
                       <div
                         className="buttons"
-                        onClick={() => {
-                          alert("edit");
-                        }}
+
                       >
-                        <div>
+                        <div onClick={() => {
+                          alert("edit");
+                        }}>
                           <img src={require("./edit-2.png")} />
                         </div>
                         <div
