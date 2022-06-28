@@ -4,6 +4,7 @@ import MainButton from '../../../components/Admin/MainButton'
 import Table from '../../../components/Admin/Table'
 import ButtonListClass from '../../../components/Admin/ButtonListClass'
 import { useContext } from 'react'
+import EditClass from '../../../components/Admin/EditClass'
 
 
 
@@ -13,7 +14,7 @@ function Classroom() {
 
     return <>
         <div className='addButton' >
-            <MainButton onClick={onclick = (() => setPopup(true))} >
+            <MainButton onClick={onclick = (() => setPopup(<EditClass />))} >
                 Add New Classroom
             </MainButton>
         </div>
