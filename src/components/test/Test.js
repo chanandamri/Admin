@@ -1,12 +1,8 @@
-import AdminLayout from '../Admin/AdminLayout/AdminLayout'
-
-
-
+import AdminLayout from '../../components/Admin/AdminLayout/AdminLayout'
 export default function Test() {
   return (
     <div>
-
-      <AdminLayout />
+      <AdminLayout/>
     </div>
   )
 }

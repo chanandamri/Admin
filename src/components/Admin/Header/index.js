@@ -1,6 +1,6 @@
 import * as React from "react"
 import "./style.css";
-import { Link, useParams} from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 
 // Creator : Team E - Chanan: Chagay & Ariel
 function Header(props) {

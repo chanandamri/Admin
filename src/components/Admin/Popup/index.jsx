@@ -1,13 +1,13 @@
+import { useContext, useEffect } from 'react';
+import { setPopupActive } from '../../../context/Admin/PopupActive'
+import EditClass from '../EditClass';
 import Input from '../Input'
 import MainButton from '../MainButton'
 import './style.css'
-function onSubmit(e) {
-    e.preventDefault()
-    console.log("hi! i'm alive!", e);
-}
 
 // Creator : Team A - Shahar
 function Popup() {
+
     return <div>
         <div className='popup-outbox'>
 
@@ -29,7 +29,8 @@ function Popup() {
                 <Input type="dropdown" title="dropdown title" />
             </div>
             <div className='popup-fotter'>
-                <form id="addclass" onSubmit={onSubmit}>
+                <form id="addclass" > 
+                 {/* onSubmit={onSubmit} */}
                     <MainButton>Cancel</MainButton>
                     <MainButton form="addclass">Add</MainButton>
                 </form>
