@@ -8,8 +8,13 @@
     box-sizing: border-box;
 
     position: absolute;
+<<<<<<< HEAD
     width: 1000px;
     height: 40px;
+=======
+    width: 1201px;
+    height: auto;
+>>>>>>> 270a5e5db33cb29356a25bf6d594e8027298cd82
     
     background: #f5f0f0;
     border: 1.5px solid #252525;
@@ -38,8 +43,13 @@ transform: rotate(-0.55deg);
     box-sizing: border-box;
 
     position: absolute;
+<<<<<<< HEAD
     width: 1000px;
     height: 40px;
+=======
+    width: 1201px;
+    height: auto;
+>>>>>>> 270a5e5db33cb29356a25bf6d594e8027298cd82
     
     background: #f5f0f0;
     border: 1.5px solid #252525;

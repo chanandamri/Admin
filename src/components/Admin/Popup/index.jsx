@@ -24,6 +24,7 @@ function Popup() {
                 </div>
 
             </div>
+<<<<<<< HEAD
             <div className='popup-body'>
                 <Input type="text" title="input title" />
                 <Input type="dropdown" title="dropdown title" />
@@ -37,7 +38,11 @@ function Popup() {
             </div>
 
 
+=======
+            <EditClass />
+>>>>>>> 270a5e5db33cb29356a25bf6d594e8027298cd82
         </div>
+
         <div id="overlay"></div>
 
     </div >

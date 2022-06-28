@@ -26,10 +26,27 @@ function Table() {
       student: "35",
     },
   ];
+<<<<<<< HEAD
   let flag = false;
   if (Object.keys(classList[0])[0] == "classroom_name") flag = true;
   let title = Object.keys(classList[0]);
   const [list, setList] = useState(classList);
+=======
+  let studentList = [
+    {
+      student_name: "avi",
+    },
+  ];
+
+  const [list, setList] = useState(classList);
+  const [nav, setNav] = useState();
+  let navFlag = false;
+  let flag = false;
+  if (Object.keys(classList[0])[0] == "classroom_name") flag = true;
+
+  let title = Object.keys(classList[0]);
+
+>>>>>>> 270a5e5db33cb29356a25bf6d594e8027298cd82
   function deleteClick(classroom_ID) {
     let newList = [];
     list.forEach((v) => {
@@ -57,13 +74,13 @@ function Table() {
             <>
               <div className="list">
                 <div className="rows_s"></div>
-
                 <div className="rows">
                   {Object.values(v).map((value) => {
                     return <div className="text_row">{value}</div>;
                   })}
                   <div>
                     {flag ? (
+<<<<<<< HEAD
                       <div
                         className="buttons"
                         onClick={() => {
@@ -72,6 +89,15 @@ function Table() {
                       >
                         <div>
                           {/* <img src={require("./edit-2.png")} /> */}
+=======
+                      <div className="buttons">
+                        <div
+                          onClick={() => {
+                            alert("edit");
+                          }}
+                        >
+                          <img src={require("./edit-2.png")} />
+>>>>>>> 270a5e5db33cb29356a25bf6d594e8027298cd82
                         </div>
                         <div
                           className="text_row"
@@ -79,6 +105,7 @@ function Table() {
                         >
                           {/* <img src={require("./trash-2.png")} /> */}
                         </div>
+<<<<<<< HEAD
                       </div>
                     ) : (
                       <div>
@@ -90,6 +117,39 @@ function Table() {
                     )}
                   </div>
                 </div>
+=======
+                        {list ? (
+                          <div
+                            className="text_row"
+                            onClick={() => deleteClick(i)}
+                          >
+                            Delete
+                          </div>
+                        ) : (
+                          <div></div>
+                        )}
+                      </div>
+                    ) : (
+                      <>
+                        <div
+                          onClick={() => {
+                            if (nav) {
+                              setNav();
+                            }
+                          }}
+                        >
+                          <img
+                            className="img_3"
+                            src={require("./Polygon 2.png")}
+                          />
+                        </div>
+                      </>
+                    )}
+                    <div>{nav ? <div>aaa</div> : ""}</div>
+                  </div>
+                </div>
+
+>>>>>>> 270a5e5db33cb29356a25bf6d594e8027298cd82
                 <br />
               </div>
             </>
@@ -100,4 +160,8 @@ function Table() {
   );
 }
 
+<<<<<<< HEAD
 export default Table;
+=======
+export default Table;
+>>>>>>> 270a5e5db33cb29356a25bf6d594e8027298cd82
