@@ -2,15 +2,15 @@ import { useContext, useEffect } from 'react';
 import { popupContext } from '../../../context/Admin/Popup'
 import './style.css'
 
-// Creator : Team A - Chanan
+// Creator : Team E - Chanan
 function Popup() {
     const { popup, setPopup } = useContext(popupContext)
 
     function closePopup() {
-        console.log("close popup");
         setPopup(false)
-        console.log(popup);
     }
+
+
 
     return <div>
         <div className='popup-outbox'>

@@ -6,17 +6,18 @@ import './style.css'
 
 
 // Creator : Team E - Chanan
-function EditClass() {
+function EditClass(props) {
     const { popup, setPopup } = useContext(popupContext)
     const dummyvalues = ["ClassA", "ClassB", "ClassC", "ClassD"]
 
-    function onSubmit(e) {
+    function test(e) {
         e.preventDefault()
-        console.log(e.target);
+        console.log("   EditClass");
         setPopup(false)
     }
     return <div>
-        <form id="addclass" onSubmit={onSubmit}>
+        <form onSubmit={props.onSubmit}>
+            {/* <form id="addclass" onSubmit={onSubmit}> */}
             <div>
                 <div className='input'>
                     <label className="inputLabel">Title</label>
