@@ -11,10 +11,16 @@ import EditClass from '../../../components/Admin/EditClass'
 // Creator : Team E - Chanan
 function Classroom() {
     const { popup, setPopup } = useContext(popupContext)
+    function onSubmit(e) {
+        e.preventDefault();
+        console.log("i'm changing the server");
+        setPopup(false)
+
+    }
 
     return <>
         <div className='addButton' >
-            <MainButton onClick={onclick = (() => setPopup(<EditClass />))} >
+            <MainButton onClick={() => setPopup(<EditClass onSubmit={onSubmit} />)} >
                 Add New Classroom
             </MainButton>
         </div>

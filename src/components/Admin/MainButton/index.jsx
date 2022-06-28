@@ -1,9 +1,9 @@
 import './style.css'
 
 // Creator : Team e - chanan
-function MainButton({ children }) {
+function MainButton({ children, onClick }) {
     return <>
-        <button className="buttonAddClass">{children}</button>
+        <button onClick={onClick} className="buttonAddClass">{children}</button>
     </>
 }
 
