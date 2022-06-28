@@ -1,9 +1,9 @@
 import './style.css'
 
 // Creator : Team e - chanan
-function MainButton({ children, form }) {
+function MainButton({ children }) {
     return <>
-        <button form={form} type="submit" className="buttonAddClass">{children}</button>
+        <button className="buttonAddClass">{children}</button>
     </>
 }
 
