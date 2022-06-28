@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import MainButton from '../MainButton';
 
 export default function Addteacherpopup(){
 
@@ -59,7 +60,7 @@ export default function Addteacherpopup(){
             <label htmlFor="password">password </label>
             <input name="password" type="password" placeholder='A-Z & a-z & 0-9 ,8characters' value={formData.password || ''} onChange={onChange} />
             
-            <button disabled={!isFormValid()}>Add</button>
+            <button className="buttonAddClass" disabled={!isFormValid()}>Add</button>
         </form>
         
         </>
