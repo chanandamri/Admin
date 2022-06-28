@@ -42,8 +42,8 @@ function Table() {
 
   function deleteClick(classroom_ID) {
     let newList = [];
-    list.forEach((v) => {
-      if (v.classroom_ID != classroom_ID) newList.push(v);
+    list.forEach((v, index) => {
+      if (index != i) newList.push(v);
     });
     console.log(newList);
     setList(newList);
@@ -56,12 +56,12 @@ function Table() {
           {title.map((v) => {
             return <div className="text_row">{v}</div>;
           })}
-          <div className="text_row">{flag ? <div> Action </div> : ""}</div>
+          <div className="text_row"></div>
         </div>
         <br />
       </div>
 
-      <div className="">
+      <div>
         {list.map((v, i) => {
           return (
             <>
@@ -87,6 +87,16 @@ function Table() {
                         >
                           <img src={require("./trash-2.png")} />
                         </div>
+                        {list ? (
+                          <div
+                            className="text_row"
+                            onClick={() => deleteClick(i)}
+                          >
+                            Delete
+                          </div>
+                        ) : (
+                          <div></div>
+                        )}
                       </div>
                     ) : (
                       <>

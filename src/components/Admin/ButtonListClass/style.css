@@ -18,6 +18,9 @@
   border-radius: 10px;
   transform: rotate(-8.04deg);
 }
+.active{
+  background-color: #F39C12;;
+}
 .box{
   text-align: center;
   justify-content: center;
