@@ -1,4 +1,4 @@
-export default function ClassTitle(list) {
+export default function ClassTitle() {
   return (
     <div className="row">
       <div className="text_row">classroom name</div>

@@ -1,4 +1,6 @@
 import {useState} from 'react'
+import './style.css'
+import MainButton from '../MainButton';
 
 export default function Addteacherpopup(){
 
@@ -47,19 +49,19 @@ export default function Addteacherpopup(){
     return(
         <>
         <form onSubmit={onSubmit}>
-            <label htmlFor="firstName">name </label>
-            <input name="firstName" placeholder="First name" value={formData.firstName || ''} onChange={onChange} />
+            <label htmlFor="firstName" className='label'>name </label>
+            <input name="firstName" className='input' placeholder="First name" value={formData.firstName || ''} onChange={onChange} />
 
-            <label htmlFor="lastName">job </label>
-            <input name="lastName" placeholder="Last name" value={formData.lastName || ''} onChange={onChange} />
+            <label htmlFor="lastName" className='label'>job </label>
+            <input name="lastName" className='input' placeholder="Last name" value={formData.lastName || ''} onChange={onChange} />
             
-            <label htmlFor="email">email </label>
-            <input name="email" type="email" placeholder="Email" value={formData.email || ''} onChange={onChange} />
+            <label htmlFor="email" className='label'>email </label>
+            <input name="email" className='input' type="email" placeholder="Email" value={formData.email || ''} onChange={onChange} />
             
-            <label htmlFor="password">password </label>
-            <input name="password" type="password" placeholder='A-Z & a-z & 0-9 ,8characters' value={formData.password || ''} onChange={onChange} />
+            <label htmlFor="password" className='label'>password </label>
+            <input name="password" className='input' type="password" placeholder='A-Z & a-z & 0-9 ,8characters' value={formData.password || ''} onChange={onChange} />
             
-            <button disabled={!isFormValid()}>Add</button>
+            <button className="buttonAddClass" disabled={!isFormValid()}>Add</button>
         </form>
         
         </>

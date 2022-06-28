@@ -20,22 +20,35 @@ top: 127px; */
     margin-right: 15px;
     /* שייך לטקסט */
     /* width: 144px;
-height: 16px; */
-
-
+    height: 16px; */
+    
+    
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 16px;
-
+    
     text-align: center;
     color: #FFFFFF;
-
+    
     flex: none;
     order: 0;
     flex-grow: 0;
+<<<<<<< HEAD
+    cursor: pointer;
+=======
+    
+    cursor: pointer;
+}
+>>>>>>> 507e9fe10a051e0b7ec0ced568a0834d1dc4ef92
 
+.buttonAddClass:disabled{
+    background: #f39d1245;
+    border: 2px solid #25252538;
+    box-shadow: 2px 2px 0px #d3540048;
+    color: #ffffff60;
+    cursor: default;
 }
 
 .buttonWhite {
