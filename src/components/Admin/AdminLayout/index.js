@@ -1,4 +1,4 @@
-import { popupActiveContext } from '../../../context/Admin/PopupActive'
+import { popupContext } from '../../../context/Admin/Popup'
 import { useState } from "react";
 import Main from '../Main'
 import Header from '../Header'
@@ -7,10 +7,10 @@ import './style.css'
 
 // Creator : Team E - bezalel
 function AdminLayout() {
-    const [popupActive, setPopupActive] = useState(false)
+    const [popup, setPopup] = useState(false)
 
     return <>
-        <popupActiveContext.Provider value={{ popupActive, setPopupActive }}>
+        <popupContext.Provider value={{ popup, setPopup }}>
             <div>
                 <Header />
             </div>
@@ -20,9 +20,9 @@ function AdminLayout() {
             </div>
 
             <div className='popUp'>
-                {popupActive && <Popup />}
+                {popup && <Popup />}
             </div>
-        </popupActiveContext.Provider>
+        </popupContext.Provider>
 
     </>
 }

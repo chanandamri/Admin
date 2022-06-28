@@ -1,4 +1,4 @@
-import { popupActiveContext } from '../../../context/Admin/PopupActive'
+import { popupContext } from '../../../context/Admin/Popup'
 import './style.css'
 import MainButton from '../../../components/Admin/MainButton'
 import Table from '../../../components/Admin/Table'
@@ -9,11 +9,11 @@ import { useContext } from 'react'
 
 // Creator : Team E - Chanan
 function Classroom() {
-    const { popupActive, setPopupActive } = useContext(popupActiveContext)
+    const { popup, setPopup } = useContext(popupContext)
 
     return <>
         <div className='addButton' >
-            <MainButton onClick={onclick = (() => setPopupActive(true))} >
+            <MainButton onClick={onclick = (() => setPopup(true))} >
                 Add New Classroom
             </MainButton>
         </div>

@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { popupActiveContext } from '../../../context/Admin/PopupActive'
+import { popupContext } from '../../../context/Admin/Popup'
 import MainButton from '../MainButton'
 import './style.css'
 
@@ -7,13 +7,13 @@ import './style.css'
 
 // Creator : Team E - Chanan
 function EditClass() {
-    const { popupActive, setPopupActive } = useContext(popupActiveContext)
+    const { popup, setPopup } = useContext(popupContext)
     const dummyvalues = ["ClassA", "ClassB", "ClassC", "ClassD"]
 
     function onSubmit(e) {
         e.preventDefault()
         console.log(e.target);
-        setPopupActive(<test onApprove={() => { }} />)
+        setPopup(false)
     }
     return <div>
         <form id="addclass" onSubmit={onSubmit}>

@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react';
-import { setPopupActive } from '../../../context/Admin/PopupActive'
+import { setPopup } from '../../../context/Admin/Popup'
 import EditClass from '../EditClass';
 import MainButton from '../MainButton'
 import './style.css'
