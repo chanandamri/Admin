@@ -51,8 +51,9 @@ export default function NewTable(props) {
     },
   ];
   const { list, setList } = useContext(listControllerContext);
+  const [dropFlag, setDropFlag] = useState(false);
   useEffect(() => {
-    setList(studentList);
+    setList(classList);
     console.log(list);
   }, []);
   // let list = classList;
@@ -72,7 +73,6 @@ export default function NewTable(props) {
           return (
             <>
               <div className="list">
-                <div className="rows_s"></div>
                 {flag ? <ClassRow value={v} /> : <StudentRow value={v} />}
               </div>
               <br />

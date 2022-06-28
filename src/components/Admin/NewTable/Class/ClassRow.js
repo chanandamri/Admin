@@ -1,8 +1,13 @@
 import { useContext } from "react";
 import { listControllerContext } from "../../../../context/Admin/List";
+import { popupContext } from "../../../../context/Admin/Popup";
+import EditClass from "../../EditClass";
+import MainButton from "../../MainButton";
 
 export default function ClassRow(v) {
+  const { popup, setPopup } = useContext(popupContext);
   const value = v.value;
+
   const { list, setList } = useContext(listControllerContext);
   function deleteClick(classroom_ID) {
     let newList = [];
@@ -10,32 +15,57 @@ export default function ClassRow(v) {
       if (v.classroom_ID != classroom_ID) newList.push(v);
     });
     console.log(newList);
-    setList(newList);
+    if (newList.length) {
+      setList(newList);
+    } else {
+      setList([
+        {
+          classroom_name: "",
+          classroom_ID: "",
+          student: "",
+        },
+      ]);
+    }
   }
   // console.log(list);
 
   return (
-    <div className="rows">
-      <div className="text_row">{value.classroom_name}</div>
-      <div className="text_row">{value.classroom_ID}</div>
-      <div className="text_row">{value.student}</div>
-      <div className="buttons">
-        <div
-          onClick={() => {
-            alert("edit");
-          }}
-        >
-          <img src={require("../TablePng/edit-2.png")} />
-        </div>
-        <div
-          className="text_row"
-          onClick={() => {
-            deleteClick(value.classroom_ID);
-          }}
-        >
-          <img src={require("../TablePng/trash-2.png")} />
-        </div>
-      </div>
-    </div>
+    <>
+      {value.classroom_name ? (
+        <>
+          <div className="rows_s"></div>
+          <div className="rows">
+            <div className="text_row">{value.classroom_name}</div>
+            <div className="text_row">{value.classroom_ID}</div>
+            <div className="text_row">{value.student}</div>
+            <div className="buttons">
+              <div
+                onClick={() => {
+                  <MainButton
+                    onClick={() =>
+                      setPopup(<EditClass onSubmit={""}>Add class</EditClass>)
+                    }
+                  >
+                    Add New Classroom
+                  </MainButton>;
+                }}
+              >
+                <img src={require("../TablePng/edit-2.png")} />
+              </div>
+              <div
+                className="text_row"
+                onClick={() => {
+                  deleteClick(value.classroom_ID);
+                }}
+              >
+                <img src={require("../TablePng/trash-2.png")} />
+              </div>
+            </div>
+          </div>
+        </>
+      ) : (
+        ""
+      )}
+    </>
   );
 }

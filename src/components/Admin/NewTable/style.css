@@ -73,3 +73,9 @@ transform: rotate(-0.55deg);
     display: flex;
     align-items: center
 }
+.dropdownIng{
+    transform: rotate(58deg)
+}
+.te{
+   top: 100%;
+}
