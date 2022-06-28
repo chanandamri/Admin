@@ -9,7 +9,7 @@
 
     position: absolute;
     width: 1201px;
-    height: 71px;
+    height: auto;
     
     background: #f5f0f0;
     border: 1.5px solid #252525;
@@ -39,7 +39,7 @@ transform: rotate(-0.55deg);
 
     position: absolute;
     width: 1201px;
-    height: 71px;
+    height: auto;
     
     background: #f5f0f0;
     border: 1.5px solid #252525;
