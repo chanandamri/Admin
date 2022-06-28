@@ -1,4 +1,4 @@
-import AdminLayout from "../Admin/AdminLayout/AdminLayout";
+import AdminLayout from "../Admin/AdminLayout/";
 
 export default function Test() {
   return <div>

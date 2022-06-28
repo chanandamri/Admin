@@ -7,7 +7,7 @@ import './style.css'
 
 // Creator : Team E - bezalel
 function AdminLayout() {
-    const [popupActive, setPopupActive] = useState(true)
+    const [popupActive, setPopupActive] = useState(false)
 
     return <>
         <popupActiveContext.Provider value={{ popupActive, setPopupActive }}>
