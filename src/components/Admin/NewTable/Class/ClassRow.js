@@ -23,7 +23,12 @@ export default function ClassRow(v) {
         >
           <img src={require("../TablePng/edit-2.png")} />
         </div>
-        <div className="text_row" onClick={() => alert("delete")}>
+        <div
+          className="text_row"
+          onClick={() => {
+            alert(value.classroom_ID);
+          }}
+        >
           <img src={require("../TablePng/trash-2.png")} />
         </div>
       </div>

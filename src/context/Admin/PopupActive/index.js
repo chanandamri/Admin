@@ -1,3 +1,3 @@
 import { createContext } from "react";
 
-export const popupActiveContext = createContext()
+export const popupActiveContext = createContext();

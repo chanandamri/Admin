@@ -1,7 +1,9 @@
 import StudentTitle from "./Student/StudentTitle";
 import ClassTitle from "./Class/ClassTitle";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ClassRow from "./Class/ClassRow";
+import "./style.css";
+import StudentRow from "./Student/StudentRow";
 
 export default function NewTable(props) {
   let classList = [
@@ -35,15 +37,17 @@ export default function NewTable(props) {
       focus: "3",
     },
   ];
-  const [list, setList] = useState(classList);
+  const [list, setList] = useState(studentList);
+
   let flag = false;
-  if (Object.keys(classList[0])[0] == "classroom_name") flag = true;
+  if (Object.keys(list[0])[0] === "classroom_name") flag = true;
+
   return (
     <div className="table-container">
       <div className="head">
         <div className="row_s"></div>
 
-        {!flag ? <ClassTitle list={list} /> : <StudentTitle />}
+        {flag ? <ClassTitle list={list} /> : <StudentTitle />}
       </div>
       <br />
       <div>
@@ -52,8 +56,9 @@ export default function NewTable(props) {
             <>
               <div className="list">
                 <div className="rows_s"></div>
-                {flag ? <ClassRow value={v} /> : ""}
+                {flag ? <ClassRow value={v} /> : <StudentRow value={v} />}
               </div>
+              <br />
             </>
           );
         })}
