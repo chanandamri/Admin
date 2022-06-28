@@ -5,7 +5,7 @@ import './style.css'
 // Creator : Team E - Chanan
 function Popup() {
     const { popup, setPopup } = useContext(popupContext)
-console.log(popup);
+    console.log(popup);
     function closePopup() {
         setPopup(false)
     }
@@ -15,7 +15,7 @@ console.log(popup);
         <div className='popup-inbox'>
             <div className='popup-header'>
                 <div className='popup-title'>
-                    Popup Title
+                    {popup.props.children}
                 </div>
                 <div onClick={closePopup} className='popup-close'>
                     <img className='popup-button-x' src={require('./x.png')} />

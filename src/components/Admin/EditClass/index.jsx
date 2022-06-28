@@ -6,7 +6,7 @@ import './style.css'
 
 
 // Creator : Team E - Chanan
-function EditClass(props) {
+function EditClass(childer, props) {
     const { popup, setPopup } = useContext(popupContext)
     const dummyvalues = ["ClassA", "ClassB", "ClassC", "ClassD"]
 

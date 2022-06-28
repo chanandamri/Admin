@@ -19,7 +19,7 @@ function Classroom() {
     return <>
         <div className='container11'>
             <div className='addButton' >
-                <MainButton onClick={() => setPopup(<EditClass onSubmit={onSubmit} />)} >
+                <MainButton onClick={() => setPopup(<EditClass onSubmit={onSubmit} >Add class</EditClass>)} >
                     Add New Classroom
                 </MainButton>
             </div>
