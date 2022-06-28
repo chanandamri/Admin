@@ -1,16 +1,11 @@
-<<<<<<< HEAD
-import Login from "../../pages/Admin/Login";
+import RowExtension from "../Admin/RowExtension";
 
 
 
 export default function Test() {
   return (
     <div>
-      <Login/>
+      <RowExtension/>
     </div>
   )
-=======
-export default function Test() {
-  return <div>{}</div>;
->>>>>>> 507e9fe10a051e0b7ec0ced568a0834d1dc4ef92
 }
