@@ -35,13 +35,9 @@ top: 127px; */
     flex: none;
     order: 0;
     flex-grow: 0;
-<<<<<<< HEAD
-    cursor: pointer;
-=======
     
     cursor: pointer;
 }
->>>>>>> 507e9fe10a051e0b7ec0ced568a0834d1dc4ef92
 
 .buttonAddClass:disabled{
     background: #f39d1245;

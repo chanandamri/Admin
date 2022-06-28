@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { popupContext } from '../../../context/Admin/Popup'
 import MainButton from '../MainButton'
-// import './style.css'
+import './style.css'
 
 
 
