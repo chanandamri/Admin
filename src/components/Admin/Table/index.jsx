@@ -26,9 +26,21 @@ function Table() {
       student: "35",
     },
   ];
-  let title = Object.keys(classList[0]);
+  let studentList = [
+    {
+      student_name: "avi",
+    },
+  ];
+
   const [list, setList] = useState(classList);
-  function deleteClick(i) {
+  const [nav, setNav] = useState();
+  let navFlag = false;
+  let flag = false;
+  if (Object.keys(classList[0])[0] == "classroom_name") flag = true;
+
+  let title = Object.keys(classList[0]);
+
+  function deleteClick(classroom_ID) {
     let newList = [];
     list.forEach((v, index) => {
       if (index != i) newList.push(v);
@@ -55,20 +67,18 @@ function Table() {
             <>
               <div className="list">
                 <div className="rows_s"></div>
-
                 <div className="rows">
                   {Object.values(v).map((value) => {
                     return <div className="text_row">{value}</div>;
                   })}
                   <div>
                     {flag ? (
-                      <div
-                        className="buttons"
-
-                      >
-                        <div onClick={() => {
-                          alert("edit");
-                        }}>
+                      <div className="buttons">
+                        <div
+                          onClick={() => {
+                            alert("edit");
+                          }}
+                        >
                           <img src={require("./edit-2.png")} />
                         </div>
                         <div
@@ -78,22 +88,44 @@ function Table() {
                           <img src={require("./trash-2.png")} />
                         </div>
                         {list ? (
-                          <div className="text_row" onClick={() => deleteClick(i)}>
+                          <div
+                            className="text_row"
+                            onClick={() => deleteClick(i)}
+                          >
                             Delete
                           </div>
                         ) : (
                           <div></div>
                         )}
                       </div>
+                    ) : (
+                      <>
+                        <div
+                          onClick={() => {
+                            if (nav) {
+                              setNav();
+                            }
+                          }}
+                        >
+                          <img
+                            className="img_3"
+                            src={require("./Polygon 2.png")}
+                          />
+                        </div>
+                      </>
+                    )}
+                    <div>{nav ? <div>aaa</div> : ""}</div>
+                  </div>
                 </div>
-                  <br />
-                </div>
-              </>
-              );
+
+                <br />
+              </div>
+            </>
+          );
         })}
-            </div>
+      </div>
     </div>
-      );
+  );
 }
 
-      export default Table;
+export default Table;

@@ -24,19 +24,9 @@ function Popup() {
                 </div>
 
             </div>
-            <div className='popup-body'>
-                <Input type="text" title="input title" />
-                <Input type="dropdown" title="dropdown title" />
-            </div>
-            <div className='popup-fotter'>
-                <form id="addclass" onSubmit={onSubmit}>
-                    <MainButton>Cancel</MainButton>
-                    <MainButton form="addclass">Add</MainButton>
-                </form>
-            </div>
-
-
+            <EditClass />
         </div>
+
         <div id="overlay"></div>
 
     </div >
