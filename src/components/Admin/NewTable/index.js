@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import ClassRow from "./Class/ClassRow";
 import "./style.css";
 import StudentRow from "./Student/StudentRow";
+import { listControllerContext } from "../../../context/Admin/List";
 
 export default function NewTable(props) {
   let classList = [
@@ -36,9 +37,25 @@ export default function NewTable(props) {
       reading: "b",
       focus: "3",
     },
+    {
+      student_name: "avi",
+      assessment: "a",
+      reading: "b",
+      focus: "3",
+    },
+    {
+      student_name: "avi",
+      assessment: "a",
+      reading: "b",
+      focus: "3",
+    },
   ];
-  const [list, setList] = useState(studentList);
-
+  const { list, setList } = useContext(listControllerContext);
+  useEffect(() => {
+    setList(studentList);
+    console.log(list);
+  }, []);
+  // let list = classList;
   let flag = false;
   if (Object.keys(list[0])[0] === "classroom_name") flag = true;
 
@@ -47,7 +64,7 @@ export default function NewTable(props) {
       <div className="head">
         <div className="row_s"></div>
 
-        {flag ? <ClassTitle list={list} /> : <StudentTitle />}
+        {flag ? <ClassTitle /> : <StudentTitle />}
       </div>
       <br />
       <div>

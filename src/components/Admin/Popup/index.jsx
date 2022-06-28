@@ -1,46 +1,32 @@
 import { useContext, useEffect } from 'react';
-import { setPopupActive } from '../../../context/Admin/PopupActive'
-import EditClass from '../EditClass';
-import Input from '../Input'
-import MainButton from '../MainButton'
+import { popupContext } from '../../../context/Admin/Popup'
 import './style.css'
 
-// Creator : Team A - Shahar
+// Creator : Team A - Chanan
 function Popup() {
+    const { popup, setPopup } = useContext(popupContext)
+
+    function closePopup() {
+        console.log("close popup");
+        setPopup(false)
+        console.log(popup);
+    }
 
     return <div>
         <div className='popup-outbox'>
-
         </div>
         <div className='popup-inbox'>
             <div className='popup-header'>
                 <div className='popup-title'>
                     Popup Title
                 </div>
-                <div className='popup-close'>
-
+                <div onClick={closePopup} className='popup-close'>
                     <img className='popup-button-x' src={require('./x.png')} />
-
                 </div>
-
             </div>
-            <div className='popup-body'>
-                <Input type="text" title="input title" />
-                <Input type="dropdown" title="dropdown title" />
-            </div>
-            <div className='popup-fotter'>
-                <form id="addclass" onSubmit={onSubmit}>
-                    <MainButton>Cancel</MainButton>
-                    <MainButton form="addclass">Add</MainButton>
-                </form>
-            </div>
-
-
+            {popup}
         </div>
         <div id="overlay"></div>
-
     </div >
 }
-
-
 export default Popup

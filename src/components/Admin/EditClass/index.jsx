@@ -1,6 +1,5 @@
 import { useContext } from 'react'
-import { popupActiveContext } from '../../../context/Admin/PopupActive'
-import Input from '../Input'
+import { popupContext } from '../../../context/Admin/Popup'
 import MainButton from '../MainButton'
 import './style.css'
 
@@ -8,22 +7,29 @@ import './style.css'
 
 // Creator : Team E - Chanan
 function EditClass() {
-    const { popupActive, setPopupActive } = useContext(popupActiveContext)
+    const { popup, setPopup } = useContext(popupContext)
+    const dummyvalues = ["ClassA", "ClassB", "ClassC", "ClassD"]
 
     function onSubmit(e) {
         e.preventDefault()
-        console.log("hi! i'm alive!", e);
-        setPopupActive(false)
+        console.log(e.target);
+        setPopup(false)
     }
     return <div>
         <form id="addclass" onSubmit={onSubmit}>
             <div>
-                <Input type="text" title="input title" />
-                <Input type="dropdown" title="dropdown title" />
+                <div className='input'>
+                    <label className="inputLabel">Title</label>
+                    <input className='inputButton' type="text" />
+                </div>
+                <label >dropdown title</label>
+                <select >
+                    {dummyvalues.map(v => { return (<option value={(v)} key={(v)}>{v}</option>) })}
+                </select>
             </div>
             <div className='popup-fotter'>
-                <MainButton>Cancel</MainButton>
-                <MainButton form="addclass">Add</MainButton>
+                <MainButton value="cancel">Cancel</MainButton>
+                <MainButton >Add</MainButton>
             </div>
         </form>
     </div >

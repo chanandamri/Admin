@@ -1,19 +1,19 @@
-import { popupActiveContext } from "../../../context/Admin/PopupActive";
+import { popupContext } from "../../../context/Admin/Popup";
 import { useState } from "react";
 import Main from "../Main";
 import Header from "../Header";
 import Popup from "../Popup";
 import "./style.css";
 import NewTable from "../NewTable";
-import listControllerContext from "../../context/Admin/List";
+import { listControllerContext } from "../../../context/Admin/List";
 // Creator : Team E - bezalel
 function AdminLayout() {
-  const [popupActive, setPopupActive] = useState(true);
-  const [list, setList] = useState();
+  const [popup, setPopup] = useState(true);
+  const [list, setList] = useState([{}]);
 
   return (
     <>
-      <popupActiveContext.Provider value={{ popupActive, setPopupActive }}>
+      <popupContext.Provider value={{ popup, setPopup }}>
         <listControllerContext.Provider value={{ list, setList }}>
           <div>
             <Header />
@@ -26,9 +26,9 @@ function AdminLayout() {
             <NewTable />
           </div>
 
-          <div className="popUp">{popupActive && <Popup />}</div>
+          <div className="popUp">{popup && <Popup />}</div>
         </listControllerContext.Provider>
-      </popupActiveContext.Provider>
+      </popupContext.Provider>
     </>
   );
 }
