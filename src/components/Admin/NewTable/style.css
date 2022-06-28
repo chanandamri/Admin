@@ -69,3 +69,7 @@ transform: rotate(-0.55deg);
 .list{
     margin: 100px;
 }
+.buttons{
+    display: flex;
+    align-items: center
+}
