@@ -4,6 +4,7 @@ import Main from '../Main'
 import Header from '../Header'
 import Popup from '../Popup'
 import './style.css'
+// import AdminPermissionUi from '../../../pages/Admin/adminPermissionUi';
 
 // Creator : Team E - bezalel
 function AdminLayout() {
