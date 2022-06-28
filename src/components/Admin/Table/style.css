@@ -1,5 +1,5 @@
 .text_row{
-    margin: 20px;
+    margin: 10px;
     
 }
 .row{
@@ -8,8 +8,8 @@
     box-sizing: border-box;
 
     position: absolute;
-    width: 1201px;
-    height: 71px;
+    width: 1000px;
+    height: 40px;
     
     background: #f5f0f0;
     border: 1.5px solid #252525;
@@ -24,8 +24,8 @@
     box-sizing: border-box;
 
 
-width: 1201px;
-height: 71px;
+width: 1000px;
+height: 40px;
 
 position: absolute;
 background: #7D56A5;
@@ -38,8 +38,8 @@ transform: rotate(-0.55deg);
     box-sizing: border-box;
 
     position: absolute;
-    width: 1201px;
-    height: 71px;
+    width: 1000px;
+    height: 40px;
     
     background: #f5f0f0;
     border: 1.5px solid #252525;
@@ -54,8 +54,8 @@ transform: rotate(-0.55deg);
     box-sizing: border-box;
 
 
-width: 1201px;
-height: 71px;
+width: 1000px;
+height: 40px;
 
 position: absolute;
 background: #7D56A5;
