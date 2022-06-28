@@ -7,31 +7,85 @@ function Table() {
   let classList = [
     {
       classroom_name: "class a",
-      classroom_ID: "#123.456",
+      classroom_ID: "#123.451",
       student: "10",
     },
     {
       classroom_name: "class b",
-      classroom_ID: "#123.789",
+      classroom_ID: "#123.452",
       student: "15",
     },
     {
       classroom_name: "class c",
-      classroom_ID: "#789.789",
+      classroom_ID: "#123.453",
       student: "30",
     },
     {
       classroom_name: "class d",
-      classroom_ID: "#789.1223",
+      classroom_ID: "#123.454",
       student: "35",
     },
+    {
+      classroom_name: "class a",
+      classroom_ID: "#123.455",
+      student: "10",
+    },
+    {
+      classroom_name: "class b",
+      classroom_ID: "#123.456",
+      student: "15",
+    },
+    {
+      classroom_name: "class c",
+      classroom_ID: "#123.457",
+      student: "30",
+    },
+    // {
+    //   classroom_name: "class d",
+    //   classroom_ID: "#789.1223",
+    //   student: "35",
+    // },
+    // {
+    //   classroom_name: "class a",
+    //   classroom_ID: "#123.456",
+    //   student: "10",
+    // },
+    // {
+    //   classroom_name: "class b",
+    //   classroom_ID: "#789.1261",
+    //   student: "15",
+    // },
+    // {
+    //   classroom_name: "class c",
+    //   classroom_ID: "#789.1260",
+    //   student: "30",
+    // },
+    // {
+    //   classroom_name: "class d",
+    //   classroom_ID: "#789.1259",
+    //   student: "35",
+    // },
+    // {
+    //   classroom_name: "class a",
+    //   classroom_ID: "#789.1258",
+    //   student: "10",
+    // },
+    // {
+    //   classroom_name: "class b",
+    //   classroom_ID: "#789.1257",
+    //   student: "15",
+    // },
+    // {
+    //   classroom_name: "class c",
+    //   classroom_ID: "#789.1256",
+    //   student: "30",
+    // },
+    // {
+    //   classroom_name: "class d",
+    //   classroom_ID: "#789.1255",
+    //   student: "35",
+    // },
   ];
-<<<<<<< HEAD
-  let flag = false;
-  if (Object.keys(classList[0])[0] == "classroom_name") flag = true;
-  let title = Object.keys(classList[0]);
-  const [list, setList] = useState(classList);
-=======
   let studentList = [
     {
       student_name: "avi",
@@ -46,7 +100,6 @@ function Table() {
 
   let title = Object.keys(classList[0]);
 
->>>>>>> 270a5e5db33cb29356a25bf6d594e8027298cd82
   function deleteClick(classroom_ID) {
     let newList = [];
     list.forEach((v) => {
@@ -80,16 +133,6 @@ function Table() {
                   })}
                   <div>
                     {flag ? (
-<<<<<<< HEAD
-                      <div
-                        className="buttons"
-                        onClick={() => {
-                          alert("edit");
-                        }}
-                      >
-                        <div>
-                          {/* <img src={require("./edit-2.png")} /> */}
-=======
                       <div className="buttons">
                         <div
                           onClick={() => {
@@ -97,27 +140,13 @@ function Table() {
                           }}
                         >
                           <img src={require("./edit-2.png")} />
->>>>>>> 270a5e5db33cb29356a25bf6d594e8027298cd82
                         </div>
                         <div
                           className="text_row"
                           onClick={() => deleteClick(v.classroom_ID)}
                         >
-                          {/* <img src={require("./trash-2.png")} /> */}
+                          <img src={require("./trash-2.png")} />
                         </div>
-<<<<<<< HEAD
-                      </div>
-                    ) : (
-                      <div>
-                        <img
-                          className="img_3"
-                          // src={require("./Polygon 2.png")}
-                        />
-                      </div>
-                    )}
-                  </div>
-                </div>
-=======
                         {list ? (
                           <div
                             className="text_row"
@@ -149,7 +178,6 @@ function Table() {
                   </div>
                 </div>
 
->>>>>>> 270a5e5db33cb29356a25bf6d594e8027298cd82
                 <br />
               </div>
             </>
@@ -160,8 +188,4 @@ function Table() {
   );
 }
 
-<<<<<<< HEAD
 export default Table;
-=======
-export default Table;
->>>>>>> 270a5e5db33cb29356a25bf6d594e8027298cd82

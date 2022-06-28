@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { popupActiveContext } from '../../../context/Admin/PopupActive'
 import Input from '../Input'
 import MainButton from '../MainButton'
-// import './style.css'
+import './style.css'
 
 
 

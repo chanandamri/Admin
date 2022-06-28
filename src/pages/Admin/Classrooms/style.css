@@ -1,20 +1,27 @@
-<<<<<<< HEAD
-.addButton{
-position: fixed;
-top:10%;
-left:80%;
+
+
+
+.container11{
+    position: relative;
+    top: 50%;
+    /* width: 90%; */
 }
-.mainTable{
-    position: fixed;
-    top:15%;
-    left:10%;
+.addButton{
+position: relative;
+top:10%;
+left:52%;
+}
+.mainTable2{
+    position: relative;
+  top:50%;
+  align-items: center;
+  /* left:10%; */
+  
     
 }
 .buttonListClass{
-    position: fixed;
-    top:90%;
-    left:50%;
+    position: absolute; 
+    top:100%; 
+    left:20%;
 }
-=======
-/* temp */
->>>>>>> 270a5e5db33cb29356a25bf6d594e8027298cd82
+
