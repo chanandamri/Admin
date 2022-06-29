@@ -27,8 +27,10 @@ export default function AdminPermissionUi() {
       <div className="container11">
         <div className="addButton">
           <MainButton
-            onClick={() =>
+            onClick={() => {
+              console.log("add teacher");
               setPopup(<Addteacherpopup>Add Teacher</Addteacherpopup>)
+            }
             }
           >
             Add New Teacher

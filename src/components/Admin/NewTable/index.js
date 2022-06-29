@@ -53,7 +53,7 @@ export default function NewTable(props) {
                 {flagClass ? (
                   <ClassRow key={item.classroom_ID} value={item} />
                 ) : flagStudent ? (
-                  <StudentRow key={item.ClassRow}  value={item} />
+                  <StudentRow key={item.ClassRow} value={item} />
                 ) : flagTeacher ? (
                   <TeacherRow value={item} />
                 ) : (
