@@ -1,7 +1,9 @@
 import { useEffect, useContext } from 'react';
 import { headerText } from '../../../context/hederText';
 import './style.css'
+import React from 'react';
 // import assessment graph component
+
 // import TF graph component
 // import TR graph component
 

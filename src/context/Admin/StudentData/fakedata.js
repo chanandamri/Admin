@@ -188,6 +188,7 @@ let trainReading = [{
     date: '6/29/2022',
     value: 20
 }]
+let classes=[]
 
 const fakeData = {
     usersDetails,

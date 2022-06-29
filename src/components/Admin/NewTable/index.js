@@ -41,14 +41,17 @@ export default function NewTable(props) {
       </div>
       <br />
       <div className="list">
-        {list.map((item) => {
+        {/* {list.filter((v, i) => (i > props.pageActive-2 && i < 5 )).map((item) => { */}
+
+        {list.slice(props.pageActive * 4, props.pageActive * 4 + 4).map((item) => {
           return (
             <>
+              
               <div key={item.ClassRow} className="list">
                 {flagClass ? (
                   <ClassRow key={item.classroom_ID} value={item} />
                 ) : flagStudent ? (
-                  <StudentRow key={item.ClassRow}  value={item} />
+                  <StudentRow key={item.ClassRow} value={item} />
                 ) : flagTeacher ? (
                   ""
                 ) : (
