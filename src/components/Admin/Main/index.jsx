@@ -9,13 +9,18 @@ import AdminPermissionUi from "../../../pages/Admin/AdminPermissionUi";
 import StudentDetails from "../../../pages/Admin/StudentDetails";
 import Table from "../Table";
 import Students from "../../../pages/Admin/Students";
+import React from "react";
+import { useContext } from "react";
+import { studentDataContext } from "../../../context/Admin/StudentData";
 
 // Creator : Team E - chanan
 function Main() {
+  let studentdatalocal = useContext(studentDataContext);
+
   return (
     <>
       <Routes>
-        <Route path="/" element={<Students />} />
+        <Route path="/" element={<Classrooms />} />
         <Route path="/classrooms" element={<Classrooms />} />
         <Route path="/Students" element={<Students />} />
         <Route path="/admin" element={<AdminPermissionUi />} />

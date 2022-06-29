@@ -1,5 +1,6 @@
 import Graphs from './Graphs'
 import './style.css'
+import React from 'react'
 
 
 

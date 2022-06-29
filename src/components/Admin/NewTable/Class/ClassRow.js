@@ -3,8 +3,11 @@ import { listControllerContext } from "../../../../context/Admin/List";
 import { popupContext } from "../../../../context/Admin/Popup";
 import EditClass from "../../EditClass";
 import MainButton from "../../MainButton";
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function ClassRow(v) {
+  const navigation = useNavigate();
   ///////
   function onSubmit(e) {
     e.preventDefault();
@@ -41,9 +44,17 @@ export default function ClassRow(v) {
       {value.classroom_name ? (
         <div className={"rowBox"}>
           <div className="rows">
-            <div className="text_row">{value.classroom_name}</div>
+            <div
+              className="text_row"
+              onClick={() => {
+                navigation("/Students");
+              }}
+            >
+              {value.classroom_name}
+            </div>
             <div className="text_row">{value.classroom_ID}</div>
             <div className="text_row">{value.student}</div>
+
             <div className="buttons">
               <div
                 onClick={() => {

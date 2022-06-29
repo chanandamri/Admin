@@ -7,8 +7,12 @@ import StudentRow from "./Student/StudentRow";
 import { listControllerContext } from "../../../context/Admin/List";
 import TeacherTitle from "./Teachers/TeacherTitle";
 import TeacherRow from "./Teachers/TeacherRow";
+import { studentDataContext } from "../../../context/Admin/StudentData";
 
 export default function NewTable(props) {
+  let studentdatalocal = useContext(studentDataContext);
+  console.log("fakedata", studentdatalocal);
+
   const { list, setList } = useContext(listControllerContext);
   const flags = props.typ;
   let flagClass = false,
@@ -21,11 +25,11 @@ export default function NewTable(props) {
   } else {
     flagTeacher = true;
   }
-  // let flag = false;
 
   useEffect(() => {
     setList(props.list);
   }, []);
+  console.log(list);
 
   return (
     <div className="table-container">
