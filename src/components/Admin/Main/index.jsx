@@ -6,7 +6,7 @@ import { Routes, Route } from "react-router-dom";
 // import Test from '../../test/Test';
 // import AdminLayout from '../AdminLayout/AdminLayout';
 import Classrooms from '../../../pages/Admin/Classrooms';
-import AdminPermissionUi from '../../../pages/Admin/adminPermissionUi';
+import AdminPermissionUi from '../../../pages/Admin/AdminPermissionUi';
 import StudentDetails from '../../../pages/Admin/StudentDetails';
 import Table from '../Table'
 

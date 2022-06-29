@@ -6,15 +6,17 @@ import './style.css'
 // import TR graph component
 
 // Creator : Team E - Ariel
-export default function StudentDetails(props){
-    const {firstName, lastName, TR ,TF, assessment} = props;
-
+export default function StudentDetails(){
+    const {firstName, lastName, TR ,TF, assessment} = useContext();
+    const allActivities = [...assessment, ...TR, ...TF]
     
-    const sortedList = Array(props).sort((a,b)=>a.date> b.date?1:-1)
     
     const [hederText, setHeaderText] = useContext(headerText);
 
     useEffect(()=>{
+        allActivities.sort((a,b)=>{
+            return (new Date(a.date).getTime()) - (new Date(b.date).getTime())
+        });
         setHeaderText("Student Details")
     },[])
 
@@ -38,7 +40,7 @@ export default function StudentDetails(props){
                 </div>
                 <hr />
                 <div>
-                    {/* {sortedList.map(()=>{return <ActivityByDate />})} */}
+                    {allActivities.map((v)=>{return <ActivityByDate key={v} details={v} className="activityByDate"/>})}
                 </div>
             </div>
         </div>
@@ -46,8 +48,22 @@ export default function StudentDetails(props){
     )
 }
 
-function ActivityByDate(){
+function ActivityByDate({details}){
     return(
-        <div className="activityByDate"></div>
+        <>
+       {
+            <div 
+                className={
+                    details==="assessment" && "activityByDate-assessment" ||
+                    details==="TF" && "activityByDate-TF" ||
+                    details==="TR" && "activityByDate-TR"
+                }>
+                    <div className="date"></div>
+                    <div className="activity"></div>
+                    <div className="result"></div>
+                    {details==="TR" && <div></div>}
+            </div>
+        }
+        </>
     )
 }
