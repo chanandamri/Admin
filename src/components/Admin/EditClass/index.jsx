@@ -16,8 +16,8 @@ function EditClass(props) {
     }
     function onSubmit(e) {
         e.preventDefault()
-        const newClassName = e.target.elements.className.value
-        console.log("classID ", newID, " ClassName ", newClassName);
+        const newClassName = { classID: newID, className: e.target.elements.className.value }
+        console.log(newClassName);
         setPopup(false)
     }
     function createnewID() {
@@ -28,27 +28,20 @@ function EditClass(props) {
     useEffect(createnewID, [])
     return <div>
         <form onSubmit={onSubmit}>
-
-            {/* {props.onSubmit}> */}
-            {/* <form id="addclass" onSubmit={onSubmit}> */}
             <div>
                 <label className='input'>
                     classroom name:
                     <input name="className" required type="text" className='inputButton' />
                 </label>
                 <div >Classroom ID
-                    {/* {dummyvalues.map(v => { return (<option value={(v)} key={(v)}>{v}</option>) })} */}
-                    {/* <input name="classID" required type="text" className='inputButton' /> */}
                     <div className='classIDtitle'>{newID}</div>
                 </div>
             </div>
             <div className='popup-fotter'>
-                <MainButton onClick={closePopup}>Cancel</MainButton>
+                <MainButton color="white" onClick={closePopup}>Cancel</MainButton>
                 <MainButton >Add</MainButton>
             </div>
         </form>
     </div >
 }
-
-
 export default EditClass
