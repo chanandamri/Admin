@@ -1,10 +1,12 @@
 import * as React from "react"
 import "./style.css";
 import { Link, useParams, useSearchParams } from "react-router-dom";
+import { headerText } from "../../../context/hederText";
+import { useContext } from "react";
 
-// Creator : Team E - Chanan: Chagay & Ariel
-function Header(props) {
-    const { currentPage } = props;
+// Creator : Team E - Ariel
+function Header() {
+    const [currentPage, setHeaderText] = useContext(headerText);
     // const {classId} = useParams();
     // console.log(classId);
     // const [currentRoute, setCurrentRoute] = useSearchParams()
@@ -18,10 +20,9 @@ function Header(props) {
                 <Link className="link2" to="/">
                     <img className="logo2" src={require("./logo2.png")} alt="logo2" />
                 </Link>
-                <Link className={currentPage ? "header-title:gray" : "header-title"} to="/classrooms">
-                    Classrooms
-                </Link>
-                {currentPage ? <PageName page={currentPage} /> : ""}
+
+                <PageName page={currentPage} />
+
                 <img className="user-logo" src={require("./user-logo.png")} />
             </div>
         </>
@@ -29,11 +30,23 @@ function Header(props) {
 }
 
 function PageName({ page }) {
-    return (
-        <div className="header-title">
-            <span className="header-title:gray">/ </span>
-            {page}
-        </div>
+   
+    if (page==="admin") return <div className="header-title">Admin-Portal</div>;
+
+    else return(
+        <>
+            <Link className={page ? "header-title-gray" : "header-title"} to="/classrooms">
+                Classrooms
+            </Link>
+
+            {page ?  
+                <div className="header-title">
+                    <span className="header-title-gray">/ </span>
+                    {page}
+                </div>
+                : ""
+            }
+        </>
     )
 }
 

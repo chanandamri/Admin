@@ -3,13 +3,13 @@ import './style.css'
 import MainButton from '../../../components/Admin/MainButton'
 import Table from '../../../components/Admin/Table'
 import ButtonListClass from '../../../components/Admin/ButtonListClass'
-import { useContext } from 'react'
+import { useEffect, useContext } from 'react'
 import EditClass from '../../../components/Admin/EditClass'
-import {listControllerContex}from '../../../context/Admin/List'
+import { headerText } from '../../../context/hederText'
+import {listControllerContext}from '../../../context/Admin/List'
 
 // Creator : Team E - Chanan
 function Classroom() {
-
     const { list, setList } = useContext(listControllerContext)
     const paginationOrder = () => {
         const pages = Math.ceil(list.length / 7);
@@ -24,6 +24,13 @@ function Classroom() {
     
       }, [list])
 
+
+    const [hederText, setHeaderText] = useContext(headerText);
+    
+    useEffect(()=>{
+        setHeaderText("")
+    },[])
+
     const { popup, setPopup } = useContext(popupContext)
     function onSubmit(e) {
         e.preventDefault();
@@ -35,7 +42,7 @@ function Classroom() {
     return <>
         <div className='container11'>
             <div className='addButton' >
-                <MainButton onClick={() => setPopup(<EditClass onSubmit={onSubmit} />)} >
+                <MainButton onClick={() => setPopup(<EditClass onSubmit={onSubmit} >Add class</EditClass>)} >
                     Add New Classroom
                 </MainButton>
             </div>

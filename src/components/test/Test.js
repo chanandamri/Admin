@@ -1,5 +1,4 @@
-
-import AdminLayout from '../../components/Admin/AdminLayout/index'
+import AdminLayout from "../Admin/AdminLayout";
 export default function Test() {
   return (
     <div>
@@ -7,7 +6,5 @@ export default function Test() {
     </div>
   )
 }
-
-
 
 
