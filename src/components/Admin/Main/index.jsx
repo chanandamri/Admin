@@ -8,6 +8,10 @@ import { Routes, Route } from "react-router-dom";
 import Classrooms from '../../../pages/Admin/Classrooms';
 import AdminPermissionUi from '../../../pages/Admin/adminPermissionUi';
 import StudentDetails from '../../../pages/Admin/StudentDetails';
+import AdminPermissionUi from '../../../pages/Admin/AdminPermissionUi';
+import Table from '../Table'
+
+
 // Creator : Team E - chanan
 function Main() {
     return <>
@@ -25,6 +29,7 @@ function Main() {
       </Routes>
 
     </>
+  
 }
 
 export default Main;

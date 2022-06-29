@@ -7,8 +7,6 @@ import { useEffect, useContext } from 'react'
 import EditClass from '../../../components/Admin/EditClass'
 import { headerText } from '../../../context/hederText'
 
-
-
 // Creator : Team E - Chanan
 function Classroom() {
 
@@ -27,18 +25,19 @@ function Classroom() {
     }
 
     return <>
-        <div className='addButton' >
-            <MainButton onClick={() => setPopup(<EditClass onSubmit={onSubmit} />)} >
-                Add New Classroom
-            </MainButton>
+        <div className='container11'>
+            <div className='addButton' >
+                <MainButton onClick={() => setPopup(<EditClass onSubmit={onSubmit} />)} >
+                    Add New Classroom
+                </MainButton>
+            </div>
+            <div className='mainTable' >
+                <Table />
+            </div>
+            <div className='buttonListClass' >
+                <ButtonListClass />
+            </div>
         </div>
-        <div className='mainTable' >
-            <Table />
-        </div>
-        <div className='buttonListClass' >
-            <ButtonListClass />
-        </div>
-
     </>
 }
 
