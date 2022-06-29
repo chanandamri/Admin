@@ -49,11 +49,11 @@ export default function NewTable(props) {
         {list.map((item) => {
           return (
             <>
-              <div className="list">
+              <div key={item.ClassRow} className="list">
                 {flagClass ? (
-                  <ClassRow keys={item.classroom_ID} value={item} />
+                  <ClassRow key={item.classroom_ID} value={item} />
                 ) : flagStudent ? (
-                  <StudentRow value={item} />
+                  <StudentRow key={item.ClassRow}  value={item} />
                 ) : flagTeacher ? (
                   <TeacherRow value={item} />
                 ) : (

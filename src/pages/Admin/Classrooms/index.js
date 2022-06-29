@@ -1,14 +1,13 @@
-import { popupContext } from '../../../context/Admin/Popup'
-import './style.css'
-import MainButton from '../../../components/Admin/MainButton'
-import Table from '../../../components/Admin/Table'
-import ButtonListClass from '../../../components/Admin/ButtonListClass'
-import { useEffect, useContext, useState } from 'react'
-import EditClass from '../../../components/Admin/EditClass'
-import { headerText } from '../../../context/hederText'
-import React from 'react'
-import NewTable from '../../../components/Admin/NewTable'
-
+import { popupContext } from "../../../context/Admin/Popup";
+import "./style.css";
+import MainButton from "../../../components/Admin/MainButton";
+import ButtonListClass from "../../../components/Admin/ButtonListClass";
+import { useEffect, useContext, useState } from "react";
+import EditClass from "../../../components/Admin/EditClass";
+import { headerText } from "../../../context/hederText";
+import { userContext } from "../../../context/Admin/User";
+import React from "react";
+import NewTable from "../../../components/Admin/NewTable";
 
 //Creator : Team E - Chanan
 function Classroom() {
@@ -40,13 +39,20 @@ function Classroom() {
     setHeaderText("");
   }, []);
 
+  const { user } = useContext(userContext);
+  console.log("classroom", user);
+
+  useEffect(() => {
+    setHeaderText("");
+  }, []);
+
   const { popup, setPopup } = useContext(popupContext);
   function onSubmit(e) {
     e.preventDefault();
     console.log("i'm changing the server");
     setPopup(false);
   }
-
+  // if (!user) return (<div>no user</div>)
   return (
     <>
       <div className="container11">
@@ -59,12 +65,12 @@ function Classroom() {
             Add New Classroom
           </MainButton>
         </div>
-        <div className="mainTable">
-          <NewTable list={classList} typ={"class"} />
-        </div>
-        <div className="buttonListClass">
-          <ButtonListClass />
-        </div>
+      </div>
+      <div className="mainTable">
+        <NewTable list={classList} typ={"class"} />
+      </div>
+      <div className="buttonListClass">
+        <ButtonListClass pages1="8" />
       </div>
     </>
   );

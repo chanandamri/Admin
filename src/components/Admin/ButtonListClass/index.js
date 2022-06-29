@@ -1,5 +1,5 @@
 import "./style.css";
-import React from "react";
+import React, { useState } from "react";
 const arrey = [];
 // const { pagetion, setPagetion } = useState(0);
 let nextimg = (
@@ -28,44 +28,82 @@ let backimg = (
   </svg>
 );
 
-function OneButtonListClass(txt, id, isactive, pages) {
-  return (
-    <div className="box" id={id}>
-      <div className="backbox">
-        <div className={"upbox " + ((txt == isactive) ? "active" : "")}>
-          <div id="imagebacknext">{txt}</div>
-          console.log({pages});
-        </div>
-      </div>
-    </div>
-  );
-}
 
 
-const creatList = (arr) => {
-  const listbutton = [];
-  let num = 1
-  arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];// temporary array for training
-  if (arr.length > 8) {
-    for (let i = arr.length; i >= 0; i -= 8) {
-      listbutton.push(num++);
-    }
-    // console.log(listbutton+arr);
+
+
+
+const creatList = (pages) => {
+  let listbutton = [];
+
+  for (let i = 0; i < pages; i++) {
+    listbutton[i] = i + 1
   }
+
   return listbutton
 }
 
 // Creator : Team E - yosef schmidt
-function ButtonListClass(arrey) {
-  let isactive = 1// צריך לשלוף מפאראם או מלפי איך שמחליטים מה להציג על המסך ולשים כאן
-  let listbutton = creatList(arrey)
+function ButtonListClass(props) {
+  let [pageActive, setPageActive] = useState(1)
+
+
+  // function OneButtonListClass(txt, id, isactive) {
+  //   return (
+  //     <div className="box" id={id}>
+  //       <div className="backbox">
+  //         <div className={"upbox " + ((txt == isactive) ? "active" : "")}>
+  //           <div id="imagebacknext">{txt}</div>
+
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  // }
+
+  let listbutton = creatList(8)
   return (
-    <div className="muneList">
-      {OneButtonListClass(backimg, "backinlist")}
-      {listbutton.map((e) => {
-        return OneButtonListClass(e, e, isactive);
+
+    <div className="muneList" >
+
+<div key={1} onClick={(e) => { setPageActive(pageActive-1); console.log(e.target.outerText); }} className="box" id={"nextlist"} >
+        <div className="backbox">
+          <div className={"upbox " + ((backimg == 0) ? "active" : "")}>
+            <div id="imagebacknext">{backimg}</div>
+          </div>
+        </div>
+      </div>
+
+      {listbutton.map((v) => {
+
+        return (
+          <div >
+            <div key={v} onClick={(e) => { setPageActive(e.target.outerText); console.log(e.target.outerText); }} className="box" id={v.id} >
+              <div className="backbox">
+                <div className={"upbox " + ((v == pageActive) ? "active" : "")}>
+                  <div id="imagebacknext">{v}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )
       })}
-      {OneButtonListClass(nextimg, "nextinlist")}
+
+
+
+
+<div key={1} onClick={(e) => { setPageActive(pageActive+1); console.log(e.target.outerText); }} className="box" id={"backinlist"} >
+      
+        <div className="backbox">
+          <div className={"upbox " + ((nextimg == 0) ? "active" : "")}>
+            <div id="imagebacknext">{nextimg}</div>
+          </div>
+        </div>
+      </div>
+
+
+
+
     </div>
   );
 }
