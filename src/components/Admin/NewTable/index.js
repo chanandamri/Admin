@@ -1,6 +1,6 @@
 import StudentTitle from "./Student/StudentTitle";
 import ClassTitle from "./Class/ClassTitle";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import ClassRow from "./Class/ClassRow";
 import "./style.css";
 import StudentRow from "./Student/StudentRow";
@@ -51,9 +51,8 @@ export default function NewTable(props) {
     },
   ];
   const { list, setList } = useContext(listControllerContext);
-  const [dropFlag, setDropFlag] = useState(false);
   useEffect(() => {
-    setList(classList);
+    setList(studentList);
     console.log(list);
   }, []);
   // let list = classList;
@@ -63,7 +62,7 @@ export default function NewTable(props) {
   return (
     <div className="table-container">
       <div className="head">
-        <div className="row_s"></div>
+        {/* <div className="row_s"></div> */}
 
         {flag ? <ClassTitle /> : <StudentTitle />}
       </div>
@@ -73,7 +72,11 @@ export default function NewTable(props) {
           return (
             <>
               <div className="list">
-                {flag ? <ClassRow value={v} /> : <StudentRow value={v} />}
+                {flag ? (
+                  <ClassRow keys={v.classroom_ID} value={v} />
+                ) : (
+                  <StudentRow value={v} />
+                )}
               </div>
               <br />
             </>

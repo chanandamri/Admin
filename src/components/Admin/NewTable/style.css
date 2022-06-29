@@ -3,11 +3,9 @@
     
 }
 .row{
-    /* margin: 10px; */
     font-weight: bold;
     box-sizing: border-box;
-
-    position: absolute;
+padding-right: 2%;
     width: 1201px;
     height: auto;
     
@@ -17,65 +15,74 @@
     display: flex;
     
     justify-content: space-between;
-    /* transform: rotate(0.55deg); */
+    
 }
-.row_s{
-    /* margin-top: 20px; */
-    box-sizing: border-box;
 
-
-width: 1201px;
-height: 71px;
-
-position: absolute;
-background: #7D56A5;
-border: 1.5px solid #252525;
-border-radius: 20px;
-transform: rotate(-0.55deg);
-}
 .rows{
     
+   
+   
+    display: flex;
+    
+    justify-content: space-between;
+    /* transform: rotate(0.55deg); */
+}
+.rowBox{
+    
     box-sizing: border-box;
 
-    position: absolute;
+    /* position: absolute; */
     width: 1201px;
     height: auto;
     
     background: #f5f0f0;
     border: 1.5px solid #252525;
     border-radius: 20px;
-    display: flex;
-    
-    justify-content: space-between;
-    /* transform: rotate(0.55deg); */
 }
-.rows_s{
-    /* margin-top: 20px; */
-    box-sizing: border-box;
 
 
-width: 1201px;
-height: 71px;
-
-position: absolute;
-background: #7D56A5;
-border: 1.5px solid #252525;
-border-radius: 20px;
-transform: rotate(-0.55deg);
-}
-.head{
+/* .head{
     margin: 100px;
 }
 .list{
     margin: 100px;
-}
+} */
 .buttons{
     display: flex;
-    align-items: center
+    align-items: center;
+    padding-right: 2%;
+    
 }
 .dropdownIng{
     transform: rotate(58deg)
 }
-.te{
-   top: 100%;
-}
+
+/* .row_s{
+    margin-top: 20px;
+    box-sizing: border-box;
+
+
+width: 1201px;
+height: 71px;
+
+position: absolute;
+background: #7D56A5;
+border: 1.5px solid #252525;
+border-radius: 20px;
+transform: rotate(-0.55deg);
+} */
+
+/* .rows_s{
+    margin-top: 20px;
+    box-sizing: border-box;
+
+
+width: 1201px;
+height: 71px;
+
+position: absolute;
+background: #7D56A5;
+border: 1.5px solid #252525;
+border-radius: 20px;
+transform: rotate(-0.55deg);
+} */

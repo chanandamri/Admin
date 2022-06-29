@@ -15,14 +15,15 @@ function AdminLayout() {
     <>
       <popupContext.Provider value={{ popup, setPopup }}>
         <listControllerContext.Provider value={{ list, setList }}>
-          <div>{/* <Header /> */}</div>
-
-          <div>{/* <Main /> */}</div>
           <div>
-            <NewTable />
+            <Header />
           </div>
 
-          {/* <div className="popUp">{popup && <Popup />}</div> */}
+          <div>
+            <Main />
+          </div>
+
+          <div className="popUp">{popup && <Popup />}</div>
         </listControllerContext.Provider>
       </popupContext.Provider>
     </>

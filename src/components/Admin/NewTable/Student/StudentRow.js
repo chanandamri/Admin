@@ -4,8 +4,8 @@ export default function StudentRow(v) {
   const value = v.value;
   const [dropFlag, setDropFlag] = useState(false);
   return (
-    <div>
-      <div className="rows_s"></div>
+    <div className="rowBox">
+      {/* <div className="rows_s"></div> */}
       <div
         className="rows"
         onClick={() => {
@@ -28,10 +28,9 @@ export default function StudentRow(v) {
             className={dropFlag ? "dropdownIng" : ""}
             src={require("../TablePng/Polygon 2.png")}
           />
-
-          <br />
         </div>
       </div>
+      <div>{dropFlag ? <div>aaa</div> : ""}</div>
     </div>
   );
 }

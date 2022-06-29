@@ -1,13 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { listControllerContext } from "../../../../context/Admin/List";
-import { popupContext } from "../../../../context/Admin/Popup";
 import EditClass from "../../EditClass";
 import MainButton from "../../MainButton";
 
 export default function ClassRow(v) {
-  const { popup, setPopup } = useContext(popupContext);
   const value = v.value;
-
+  const [popup, setPopup] = useState(true);
   const { list, setList } = useContext(listControllerContext);
   function deleteClick(classroom_ID) {
     let newList = [];
@@ -32,8 +30,7 @@ export default function ClassRow(v) {
   return (
     <>
       {value.classroom_name ? (
-        <>
-          <div className="rows_s"></div>
+        <div className={"rowBox"}>
           <div className="rows">
             <div className="text_row">{value.classroom_name}</div>
             <div className="text_row">{value.classroom_ID}</div>
@@ -62,7 +59,7 @@ export default function ClassRow(v) {
               </div>
             </div>
           </div>
-        </>
+        </div>
       ) : (
         ""
       )}
