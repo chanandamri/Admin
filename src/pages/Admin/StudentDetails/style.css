@@ -1,3 +1,37 @@
 .student-details-body{
     text-align:center
 }
+
+/* .title{}
+.name{} */
+
+.graphs{
+    display: flex;
+}
+.assessment{
+    margin-right: auto;
+    margin-left: 100px;
+}
+/* .reading{} */
+.focus{
+    margin-left: auto;
+    margin-right: 100px;
+}
+
+.activityByDate{
+    display: flex;
+    border: 1.5px solid #252525;
+    border-radius: 20px;
+}
+.activityByDate-assessment{
+    background: #F2994A;
+}
+.activityByDate-TF{
+    background: #35BFEA;
+}
+.activityByDate-TR{
+    background: #7D56A5;
+}
+/* .date{}
+.activity{}
+.result{} */
