@@ -17,7 +17,7 @@ import { studentDataContext } from '../../../context/Admin/StudentData';
 // Creator : Team E - chanan
 function Main() {
     let studentdatalocal = useContext(studentDataContext)
-    console.log("fakedata", studentdatalocal);
+    // console.log("fakedata", studentdatalocal);
 
     return (
         <>
