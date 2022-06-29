@@ -51,13 +51,24 @@ export default function NewTable(props) {
     },
   ];
   const { list, setList } = useContext(listControllerContext);
-  useEffect(() => {
-    setList(studentList);
-    console.log(list);
-  }, []);
   // let list = classList;
   let flag = false;
   if (Object.keys(list[0])[0] === "classroom_name") flag = true;
+
+  const paginationOrder = () => {
+    console.log(hey);
+    const pages = Math.ceil(list.length / 10);
+    console.log("pages:", pages);
+  }
+
+  useEffect(() => {
+    paginationOrder()
+
+  }, [list])
+
+  useEffect(() => {
+    setList(studentList);
+  }, []);
 
   return (
     <div className="table-container">
@@ -67,13 +78,13 @@ export default function NewTable(props) {
         {flag ? <ClassTitle /> : <StudentTitle />}
       </div>
       <br />
-      <div>
-        {list.map((v) => {
+      <div className="list">
+        {list.map((item) => {
           return (
             <>
-              <div className="list">
+              <div className="item">
                 <div className="rows_s"></div>
-                {flag ? <ClassRow value={v} /> : <StudentRow value={v} />}
+                {flag ? <ClassRow value={item} /> : <StudentRow value={item} />}
               </div>
               <br />
             </>

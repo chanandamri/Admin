@@ -5,9 +5,25 @@ import Table from '../../../components/Admin/Table'
 import ButtonListClass from '../../../components/Admin/ButtonListClass'
 import { useContext } from 'react'
 import EditClass from '../../../components/Admin/EditClass'
+import {listControllerContex}from '../../../context/Admin/List'
 
 // Creator : Team E - Chanan
 function Classroom() {
+
+    const { list, setList } = useContext(listControllerContext)
+    const paginationOrder = () => {
+        const pages = Math.ceil(list.length / 7);
+    console.log(list);
+        const item = '';
+    
+        console.log("pages:", pages);
+      }
+    
+      useEffect(() => {
+        paginationOrder()
+    
+      }, [list])
+
     const { popup, setPopup } = useContext(popupContext)
     function onSubmit(e) {
         e.preventDefault();

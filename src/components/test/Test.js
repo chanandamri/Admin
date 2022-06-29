@@ -1,5 +1,5 @@
 
-import AdminLayout from '../../components/Admin/AdminLayout/AdminLayout'
+import AdminLayout from '../../components/Admin/AdminLayout/index'
 export default function Test() {
   return (
     <div>
