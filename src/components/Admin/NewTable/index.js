@@ -5,6 +5,8 @@ import ClassRow from "./Class/ClassRow";
 import "./style.css";
 import StudentRow from "./Student/StudentRow";
 import { listControllerContext } from "../../../context/Admin/List";
+import TeacherTitle from "./Teachers/TeacherTitle";
+import TeacherRow from "./Teachers/TeacherRow";
 
 export default function NewTable(props) {
   const { list, setList } = useContext(listControllerContext);
@@ -33,7 +35,7 @@ export default function NewTable(props) {
         ) : flagStudent ? (
           <StudentTitle />
         ) : flagTeacher ? (
-          ""
+          <TeacherTitle />
         ) : (
           ""
         )}
@@ -49,7 +51,7 @@ export default function NewTable(props) {
                 ) : flagStudent ? (
                   <StudentRow value={item} />
                 ) : flagTeacher ? (
-                  ""
+                  <TeacherRow value={item} />
                 ) : (
                   ""
                 )}

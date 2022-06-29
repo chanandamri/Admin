@@ -1,4 +1,5 @@
 import { useState } from "react";
+import RowExtension from "../../RowExtension";
 
 export default function StudentRow(v) {
   const value = v.value;
@@ -30,7 +31,7 @@ export default function StudentRow(v) {
           />
         </div>
       </div>
-      <div>{dropFlag ? <div>aaa</div> : ""}</div>
+      <div>{dropFlag ? <div>{<RowExtension />}</div> : ""}</div>
     </div>
   );
 }

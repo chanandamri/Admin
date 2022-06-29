@@ -33,7 +33,7 @@ function Students() {
   useEffect(() => {
     setHeaderText("");
   }, []);
-
+  setHeaderText("student");
   return (
     <>
       <div className="container11">
