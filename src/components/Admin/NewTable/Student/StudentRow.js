@@ -5,7 +5,7 @@ export default function StudentRow(v) {
   const value = v.value;
   const ln = v.ln;
 
-  console.log(value);
+  // console.log(value);
   const [dropFlag, setDropFlag] = useState(false);
   // const leng=(value.TF.length - 1)
   return (

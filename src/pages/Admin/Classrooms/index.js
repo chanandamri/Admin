@@ -12,7 +12,9 @@ import NewTable from "../../../components/Admin/NewTable";
 //Creator : Team E - Chanan
 function Classroom() {
   const [hederText, setHeaderText] = useContext(headerText);
-  let classList = [
+  const [classList, setClassList] = useState([]);
+
+  let classLis = [
     {
       classroom_name: "class a",
       classroom_ID: "#123.456",
@@ -37,14 +39,11 @@ function Classroom() {
   ];
   useEffect(() => {
     setHeaderText("");
+    setClassList(classLis);
   }, []);
 
   const { user } = useContext(userContext);
-  console.log("classroom", user);
-
-  useEffect(() => {
-    setHeaderText("");
-  }, []);
+  // console.log("classroom", user);
 
   const { popup, setPopup } = useContext(popupContext);
   function onSubmit(e) {
