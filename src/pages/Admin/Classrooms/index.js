@@ -46,7 +46,7 @@ function Classroom() {
     console.log("i'm changing the server");
     setPopup(false);
   }
-
+const pagesNum={num : 8};
   return (
     <>
       <div className="container11">
@@ -63,7 +63,7 @@ function Classroom() {
           <NewTable list={classList} typ={"class"} />
         </div>
         <div className="buttonListClass">
-          <ButtonListClass />
+          <ButtonListClass pages1="8" />
         </div>
       </div>
     </>
