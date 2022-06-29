@@ -17,6 +17,21 @@
     color: #252525;
 }
 
+.classIDtitle {
+    box-sizing: border-box;
+    width: 374px;
+    height: 60px;
+    background: #FFFFFF;
+    border: 1px solid #7D839D;
+    border-radius: 12px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 25px;
+    color: #252525;
+}
+
 .input>label {
     height: 25px;
     position: relative;
