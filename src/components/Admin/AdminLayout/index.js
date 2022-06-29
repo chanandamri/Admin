@@ -4,7 +4,6 @@ import Main from "../Main";
 import Header from "../Header";
 import Popup from "../Popup";
 import "./style.css";
-import NewTable from "../NewTable";
 import { listControllerContext } from "../../../context/Admin/List";
 import { headerText } from "../../../context/hederText";
 import { userContext } from "../../../context/Admin/User";
@@ -20,7 +19,7 @@ function AdminLayout() {
   const [list, setList] = useState([{}]);
   const setHeaderText = useState("");
   const [user, setUser] = useState(false);
-  const [ studentData, setstudentData ]=useState(fakeData)
+  const [studentData, setstudentData] = useState(fakeData);
 
   return (
     <>
@@ -28,7 +27,9 @@ function AdminLayout() {
         <listControllerContext.Provider value={{ list, setList }}>
           <headerText.Provider value={setHeaderText}>
             <userContext.Provider value={{ user, setUser }}>
-              <studentDataContext.Provider value={{ studentData, setstudentData }}>
+              <studentDataContext.Provider
+                value={{ studentData, setstudentData }}
+              >
                 <div>
                   <Header />
                 </div>

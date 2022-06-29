@@ -4,10 +4,8 @@ import { popupContext } from "../../../../context/Admin/Popup";
 import EditClass from "../../EditClass";
 import MainButton from "../../MainButton";
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
 
 export default function ClassRow(v) {
-  const navigation = useNavigate();
   ///////
   function onSubmit(e) {
     e.preventDefault();
@@ -19,10 +17,10 @@ export default function ClassRow(v) {
   const value = v.value;
   const { popup, setPopup } = useContext(popupContext);
   const { list, setList } = useContext(listControllerContext);
-  function deleteClick(classroom_ID) {
+  function deleteClick(teacherName) {
     let newList = [];
     list.forEach((v) => {
-      if (v.classroom_ID != classroom_ID) newList.push(v);
+      if (v.teacherName != teacherName) newList.push(v);
     });
     console.log(newList);
     if (newList.length) {
@@ -30,9 +28,7 @@ export default function ClassRow(v) {
     } else {
       setList([
         {
-          classroom_name: "",
-          classroom_ID: "",
-          student: "",
+          teacherName: "",
         },
       ]);
     }
@@ -41,26 +37,17 @@ export default function ClassRow(v) {
 
   return (
     <>
-      {value.classroom_name ? (
+      {value.teacherName ? (
         <div className={"rowBox"}>
           <div className="rows">
-            <div
-              className="text_row"
-              onClick={() => {
-                navigation("/Students");
-              }}
-            >
-              {value.classroom_name}
-            </div>
-            <div className="text_row">{value.classroom_ID}</div>
-            <div className="text_row">{value.student}</div>
+            <div className="text_row">{value.teacherName}</div>
 
             <div className="buttons">
               <div
                 onClick={() => {
                   setPopup(
-                    <EditClass onSubmit={onSubmit} classId={value.classroom_ID}>
-                      Edit class
+                    <EditClass onSubmit={onSubmit} classId={value.teacherName}>
+                      Edit teacher
                     </EditClass>
                   );
                 }}
@@ -70,7 +57,7 @@ export default function ClassRow(v) {
               <div
                 className="text_row"
                 onClick={() => {
-                  deleteClick(value.classroom_ID);
+                  deleteClick(value.teacherName);
                 }}
               >
                 <img src={require("../TablePng/trash-2.png")} />
