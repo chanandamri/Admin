@@ -6,9 +6,14 @@ import ButtonListClass from '../../../components/Admin/ButtonListClass'
 import { useEffect, useContext } from 'react'
 import EditClass from '../../../components/Admin/EditClass'
 import { headerText } from '../../../context/hederText'
+import { userContext } from '../../../context/Admin/User'
 
 // Creator : Team E - Chanan
 function Classroom() {
+
+    const {user} = useContext(userContext)
+    console.log("classroom",user);
+
 
     const [hederText, setHeaderText] = useContext(headerText);
     
@@ -23,7 +28,7 @@ function Classroom() {
         setPopup(false)
 
     }
-
+if (!user) return (<div>no user</div>)
     return <>
         <div className='container11'>
             <div className='addButton' >
