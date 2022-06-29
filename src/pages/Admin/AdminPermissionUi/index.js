@@ -5,6 +5,8 @@ import { useEffect, useContext } from "react";
 import { headerText } from "../../../context/hederText";
 import NewTable from "../../../components/Admin/NewTable";
 import ButtonListClass from "../../../components/Admin/ButtonListClass";
+import { userContext } from "../../../context/Admin/User";
+import { useNavigate } from "react-router-dom";
 
 // Creator : Team E - Ariel
 export default function AdminPermissionUi() {
@@ -21,6 +23,13 @@ export default function AdminPermissionUi() {
   useEffect(() => {
     setHeaderText("admin");
   }, []);
+
+  const { user } = useContext(userContext);
+  const NoPermission = useNavigate()
+  console.log(user);
+    useEffect(() => {
+      if (!(user.permissions ==="admin") ) return (NoPermission("/login"));
+    },[])
 
   return (
     <>

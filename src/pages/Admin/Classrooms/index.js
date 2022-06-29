@@ -8,6 +8,7 @@ import { headerText } from "../../../context/hederText";
 import { userContext } from "../../../context/Admin/User";
 import React from "react";
 import NewTable from "../../../components/Admin/NewTable";
+import { useNavigate } from "react-router-dom";
 
 //Creator : Team E - Chanan
 function Classroom() {
@@ -43,7 +44,14 @@ function Classroom() {
   }, []);
 
   const { user } = useContext(userContext);
-  // console.log("classroom", user);
+  const NoPermission = useNavigate();
+  useEffect(() => {
+    if (!(user.permissions === "teacher")) return NoPermission("/login");
+  }, []);
+
+  useEffect(() => {
+    setHeaderText("");
+  }, []);
 
   const { popup, setPopup } = useContext(popupContext);
   function onSubmit(e) {
@@ -51,7 +59,7 @@ function Classroom() {
     console.log("i'm changing the server");
     setPopup(false);
   }
-  // if (!user) return (<div>no user</div>)
+
   return (
     <>
       <div className="container11">

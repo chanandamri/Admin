@@ -11,24 +11,26 @@ import Students from "../../../pages/Admin/Students";
 
 // Creator : Team E - chanan
 function Main() {
-  let studentdatalocal = useContext(studentDataContext);
+    let studentdatalocal = useContext(studentDataContext)
+    console.log("fakedata", studentdatalocal);
 
-  return (
-    <>
-      <Routes>
-        <Route path="/" element={<Classrooms />} />
-        <Route path="/classrooms" element={<Classrooms />} />
-        <Route path="/Students" element={<Students />} />
-        <Route path="/admin" element={<AdminPermissionUi />} />
-        <Route path="/studentDetails" element={<StudentDetails />} />
-        {/* <Route path="/test" element={<Test />} />
+    return (
+        <>
+            <Routes>
+                <Route path="/" element={<Login />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/classrooms" element={<Classrooms />} />
+                <Route path="/Students" element={<Students />} />
+                <Route path="/admin" element={<AdminPermissionUi />} />
+                <Route path="/studentDetails" element={<StudentDetails />} />
+                {/* <Route path="/test" element={<Test />} />
                 <Route path="/layout" element={<AdminLayout/>} /> */}
-        {/* <Route path="/login" element={< />} /> 
+                {/* <Route path="/login" element={< />} /> 
                   <Route path="/home" element={< />} />
              <Route path="/singUp" element={< />} />  */}
-      </Routes>
-    </>
-  );
+            </Routes>
+        </>
+    );
 }
 
 export default Main;
