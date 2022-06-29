@@ -3,26 +3,27 @@ import './style.css'
 import MainButton from '../../../components/Admin/MainButton'
 import Table from '../../../components/Admin/Table'
 import ButtonListClass from '../../../components/Admin/ButtonListClass'
-import { useEffect, useContext } from 'react'
+import { useEffect, useContext, useState } from 'react'
 import EditClass from '../../../components/Admin/EditClass'
 import { headerText } from '../../../context/hederText'
-import {listControllerContext}from '../../../context/Admin/List'
+import React from 'react'
+import NewTable from '../../../components/Admin/NewTable'
 
-// Creator : Team E - Chanan
+
+//Creator : Team E - Chanan
 function Classroom() {
-    const { list, setList } = useContext(listControllerContext)
-    const paginationOrder = () => {
-        const pages = Math.ceil(list.length / 7);
-    console.log(list);
-        const item = '';
+    // const {pagetion,setPagetion}=useState(0);
+    // const paginationOrder = () => {
+    //     const pages = Math.ceil(list.length / 7);
+  
+    //     const item = '';
+    // setPagetion(pages);
+    //     console.log("pages:", pages); 
+    //   }
+    //   useEffect(() => {
+    //     paginationOrder()
     
-        console.log("pages:", pages);
-      }
-    
-      useEffect(() => {
-        paginationOrder()
-    
-      }, [list])
+    //   }, [])
 
 
     const [hederText, setHeaderText] = useContext(headerText);
@@ -34,12 +35,12 @@ function Classroom() {
     const { popup, setPopup } = useContext(popupContext)
     function onSubmit(e) {
         e.preventDefault();
-        console.log("i'm changing the server");
+        // console.log("i'm changing the server");
         setPopup(false)
-
     }
 
-    return <>
+    return (
+    <>
         <div className='container11'>
             <div className='addButton' >
                 <MainButton onClick={() => setPopup(<EditClass onSubmit={onSubmit} >Add class</EditClass>)} >
@@ -47,13 +48,14 @@ function Classroom() {
                 </MainButton>
             </div>
             <div className='mainTable' >
-                <Table />
+                <NewTable />
             </div>
             <div className='buttonListClass' >
-                <ButtonListClass />
+                <ButtonListClass pages={8} />
             </div>
         </div>
     </>
+    )
 }
 
 

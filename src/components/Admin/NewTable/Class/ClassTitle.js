@@ -1,3 +1,4 @@
+import React from "react";
 export default function ClassTitle() {
   return (
     <div className="row">

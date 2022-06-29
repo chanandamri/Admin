@@ -5,6 +5,7 @@ import ClassRow from "./Class/ClassRow";
 import "./style.css";
 import StudentRow from "./Student/StudentRow";
 import { listControllerContext } from "../../../context/Admin/List";
+import React from "react";
 
 export default function NewTable(props) {
   let classList = [
@@ -56,7 +57,7 @@ export default function NewTable(props) {
   if (Object.keys(list[0])[0] === "classroom_name") flag = true;
 
   const paginationOrder = () => {
-    console.log(hey);
+   
     const pages = Math.ceil(list.length / 10);
     console.log("pages:", pages);
   }

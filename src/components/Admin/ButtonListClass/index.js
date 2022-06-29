@@ -1,5 +1,7 @@
 import "./style.css";
+import React from "react";
 const arrey = [];
+// const { pagetion, setPagetion } = useState(0);
 let nextimg = (
   <svg
     width="9"
@@ -26,12 +28,13 @@ let backimg = (
   </svg>
 );
 
-function OneButtonListClass(txt, id, isactive) {
+function OneButtonListClass(txt, id, isactive, pages) {
   return (
     <div className="box" id={id}>
       <div className="backbox">
         <div className={"upbox " + ((txt == isactive) ? "active" : "")}>
           <div id="imagebacknext">{txt}</div>
+          console.log({pages});
         </div>
       </div>
     </div>

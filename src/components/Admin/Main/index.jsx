@@ -9,6 +9,7 @@ import Classrooms from '../../../pages/Admin/Classrooms';
 import AdminPermissionUi from '../../../pages/Admin/AdminPermissionUi';
 import StudentDetails from '../../../pages/Admin/StudentDetails';
 import Table from '../Table'
+import React from 'react';
 
 
 // Creator : Team E - chanan

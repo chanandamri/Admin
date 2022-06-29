@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { listControllerContext } from "../../../../context/Admin/List";
+import React from "react";
 
 export default function ClassRow(v) {
   const value = v.value;
@@ -9,7 +10,7 @@ export default function ClassRow(v) {
     list.forEach((v) => {
       if (v.classroom_ID != classroom_ID) newList.push(v);
     });
-    console.log(newList);
+    // console.log(newList);
     setList(newList);
   }
   // console.log(list);

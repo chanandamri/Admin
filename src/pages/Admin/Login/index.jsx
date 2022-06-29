@@ -8,8 +8,8 @@ function Login() {
       e.preventDefault()
     return(
         <>
-        {console.log(e.target.email.value)}
-        {console.log(e.target.password.value)}
+        {/* {console.log(e.target.email.value)}
+        {console.log(e.target.password.value)} */}
         </>
     )
   };

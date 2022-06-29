@@ -1,3 +1,4 @@
+import React from "react";
 export default function StudentRow(v) {
   const value = v.value;
 

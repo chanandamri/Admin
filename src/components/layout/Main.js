@@ -4,6 +4,7 @@ import Nav from "./Nav";
 import Popup from "./Popup";
 import { Outlet, Route, Routes } from "react-router-dom"
 import Context from "../../context";
+import React from "react";
 
 
 function Main() {
