@@ -1,11 +1,12 @@
 import { useContext, useEffect } from 'react';
 import { popupContext } from '../../../context/Admin/Popup'
 import './style.css'
+import React from 'react';
 
 // Creator : Team E - Chanan
 function Popup() {
     const { popup, setPopup } = useContext(popupContext)
-    console.log("popup", popup);
+    // console.log("popup", popup);
     function closePopup() {
         setPopup(false)
     }

@@ -3,6 +3,7 @@ import Addteacherpopup from "../../../components/Admin/AddTeacherPopup"
 import { popupContext } from "../../../context/Admin/Popup"
 import { useEffect, useContext } from "react"
 import { headerText } from "../../../context/hederText"
+import React from "react"
 
 // Creator : Team E - Ariel
 export default function AdminPermissionUi(){

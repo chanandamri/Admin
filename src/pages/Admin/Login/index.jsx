@@ -5,7 +5,13 @@ import MainButton from "../../../components/Admin/MainButton";
 // Creator : Team e - chanan
 function Login() {
   const onSubmit = (e) => {
-    return e.preventDefault();
+      e.preventDefault()
+    return(
+        <>
+        {/* {console.log(e.target.email.value)}
+        {console.log(e.target.password.value)} */}
+        </>
+    )
   };
 
   return (
