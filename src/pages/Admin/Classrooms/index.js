@@ -12,51 +12,62 @@ import NewTable from '../../../components/Admin/NewTable'
 
 //Creator : Team E - Chanan
 function Classroom() {
-    // const {pagetion,setPagetion}=useState(0);
-    // const paginationOrder = () => {
-    //     const pages = Math.ceil(list.length / 7);
-  
-    //     const item = '';
-    // setPagetion(pages);
-    //     console.log("pages:", pages); 
-    //   }
-    //   useEffect(() => {
-    //     paginationOrder()
-    
-    //   }, [])
+  const [hederText, setHeaderText] = useContext(headerText);
+  let classList = [
+    {
+      classroom_name: "class a",
+      classroom_ID: "#123.456",
+      student: "10",
+      bla: "bla",
+    },
+    {
+      classroom_name: "class b",
+      classroom_ID: "#123.789",
+      student: "15",
+    },
+    {
+      classroom_name: "class c",
+      classroom_ID: "#789.789",
+      student: "30",
+    },
+    {
+      classroom_name: "class d",
+      classroom_ID: "#789.1223",
+      student: "35",
+    },
+  ];
+  useEffect(() => {
+    setHeaderText("");
+  }, []);
 
+  const { popup, setPopup } = useContext(popupContext);
+  function onSubmit(e) {
+    e.preventDefault();
+    console.log("i'm changing the server");
+    setPopup(false);
+  }
 
-    const [hederText, setHeaderText] = useContext(headerText);
-    
-    useEffect(()=>{
-        setHeaderText("")
-    },[])
-
-    const { popup, setPopup } = useContext(popupContext)
-    function onSubmit(e) {
-        e.preventDefault();
-        // console.log("i'm changing the server");
-        setPopup(false)
-    }
-
-    return (
+  return (
     <>
-        <div className='container11'>
-            <div className='addButton' >
-                <MainButton onClick={() => setPopup(<EditClass onSubmit={onSubmit} >Add class</EditClass>)} >
-                    Add New Classroom
-                </MainButton>
-            </div>
-            <div className='mainTable' >
-                <NewTable />
-            </div>
-            <div className='buttonListClass' >
-                <ButtonListClass pages={8} />
-            </div>
+      <div className="container11">
+        <div className="addButton">
+          <MainButton
+            onClick={() =>
+              setPopup(<EditClass onSubmit={onSubmit}>Add class</EditClass>)
+            }
+          >
+            Add New Classroom
+          </MainButton>
         </div>
+        <div className="mainTable">
+          <NewTable list={classList} typ={"class"} />
+        </div>
+        <div className="buttonListClass">
+          <ButtonListClass />
+        </div>
+      </div>
     </>
-    )
+  );
 }
 
-
-export default Classroom
+export default Classroom;

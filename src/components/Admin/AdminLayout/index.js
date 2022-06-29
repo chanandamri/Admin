@@ -12,13 +12,12 @@ import React from "react";
 function AdminLayout() {
   const [popup, setPopup] = useState(false);
   const [list, setList] = useState([{}]);
-  const setHeaderText = useState('')
+  const setHeaderText = useState("");
   return (
     <>
       <popupContext.Provider value={{ popup, setPopup }}>
         <listControllerContext.Provider value={{ list, setList }}>
           <headerText.Provider value={setHeaderText}>
-
             <div>
               <Header />
             </div>
