@@ -9,10 +9,14 @@ import Classrooms from '../../../pages/Admin/Classrooms';
 import AdminPermissionUi from '../../../pages/Admin/AdminPermissionUi';
 import StudentDetails from '../../../pages/Admin/StudentDetails';
 import Table from '../Table'
+import { studentDataContext } from '../../../context/Admin/StudentData';
+import { useContext } from 'react';
 
 
 // Creator : Team E - chanan
 function Main() {
+    let studentdatalocal = useContext(studentDataContext)
+    console.log("fakedata", studentdatalocal);
     return <>
 
         <Routes>
