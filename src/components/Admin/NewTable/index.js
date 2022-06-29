@@ -7,64 +7,36 @@ import StudentRow from "./Student/StudentRow";
 import { listControllerContext } from "../../../context/Admin/List";
 
 export default function NewTable(props) {
-  let classList = [
-    {
-      classroom_name: "class a",
-      classroom_ID: "#123.456",
-      student: "10",
-      bla: "bla",
-    },
-    {
-      classroom_name: "class b",
-      classroom_ID: "#123.789",
-      student: "15",
-    },
-    {
-      classroom_name: "class c",
-      classroom_ID: "#789.789",
-      student: "30",
-    },
-    {
-      classroom_name: "class d",
-      classroom_ID: "#789.1223",
-      student: "35",
-    },
-  ];
-  let studentList = [
-    {
-      student_name: "avi",
-      assessment: "a",
-      reading: "b",
-      focus: "3",
-    },
-    {
-      student_name: "avi",
-      assessment: "a",
-      reading: "b",
-      focus: "3",
-    },
-    {
-      student_name: "avi",
-      assessment: "a",
-      reading: "b",
-      focus: "3",
-    },
-  ];
   const { list, setList } = useContext(listControllerContext);
-  // let list = classList;
-  let flag = false;
-  if (Object.keys(list[0])[0] === "classroom_name") flag = true;
+  const flags = props.typ;
+  let flagClass = false,
+    flagStudent = false,
+    flagTeacher = false;
+  if (flags === "class") {
+    flagClass = true;
+  } else if (flags === "student") {
+    flagStudent = true;
+  } else {
+    flagTeacher = true;
+  }
+  // let flag = false;
 
   useEffect(() => {
-    setList(studentList);
+    setList(props.list);
   }, []);
 
   return (
     <div className="table-container">
       <div className="head">
-        {/* <div className="row_s"></div> */}
-
-        {flag ? <ClassTitle /> : <StudentTitle />}
+        {flagClass ? (
+          <ClassTitle />
+        ) : flagStudent ? (
+          <StudentTitle />
+        ) : flagTeacher ? (
+          ""
+        ) : (
+          ""
+        )}
       </div>
       <br />
       <div className="list">
@@ -72,10 +44,14 @@ export default function NewTable(props) {
           return (
             <>
               <div className="list">
-                {flag ? (
+                {flagClass ? (
                   <ClassRow keys={item.classroom_ID} value={item} />
-                ) : (
+                ) : flagStudent ? (
                   <StudentRow value={item} />
+                ) : flagTeacher ? (
+                  ""
+                ) : (
+                  ""
                 )}
               </div>
               <br />

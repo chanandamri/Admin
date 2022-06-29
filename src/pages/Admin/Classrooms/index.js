@@ -11,7 +11,29 @@ import NewTable from "../../../components/Admin/NewTable";
 // Creator : Team E - Chanan
 function Classroom() {
   const [hederText, setHeaderText] = useContext(headerText);
-
+  let classList = [
+    {
+      classroom_name: "class a",
+      classroom_ID: "#123.456",
+      student: "10",
+      bla: "bla",
+    },
+    {
+      classroom_name: "class b",
+      classroom_ID: "#123.789",
+      student: "15",
+    },
+    {
+      classroom_name: "class c",
+      classroom_ID: "#789.789",
+      student: "30",
+    },
+    {
+      classroom_name: "class d",
+      classroom_ID: "#789.1223",
+      student: "35",
+    },
+  ];
   useEffect(() => {
     setHeaderText("");
   }, []);
@@ -36,7 +58,7 @@ function Classroom() {
           </MainButton>
         </div>
         <div className="mainTable">
-          <NewTable />
+          <NewTable list={classList} typ={"class"} />
         </div>
         <div className="buttonListClass">
           <ButtonListClass />

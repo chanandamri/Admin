@@ -1,11 +1,20 @@
 import { useContext, useState } from "react";
 import { listControllerContext } from "../../../../context/Admin/List";
+import { popupContext } from "../../../../context/Admin/Popup";
 import EditClass from "../../EditClass";
 import MainButton from "../../MainButton";
 
 export default function ClassRow(v) {
+  ///////
+  function onSubmit(e) {
+    e.preventDefault();
+    console.log("i'm changing the server");
+    setPopup(false);
+  }
+  ////
+
   const value = v.value;
-  const [popup, setPopup] = useState(true);
+  const { popup, setPopup } = useContext(popupContext);
   const { list, setList } = useContext(listControllerContext);
   function deleteClick(classroom_ID) {
     let newList = [];
@@ -38,13 +47,11 @@ export default function ClassRow(v) {
             <div className="buttons">
               <div
                 onClick={() => {
-                  <MainButton
-                    onClick={() =>
-                      setPopup(<EditClass onSubmit={""}>Add class</EditClass>)
-                    }
-                  >
-                    Add New Classroom
-                  </MainButton>;
+                  setPopup(
+                    <EditClass onSubmit={onSubmit} classId={value.classroom_ID}>
+                      Edit class
+                    </EditClass>
+                  );
                 }}
               >
                 <img src={require("../TablePng/edit-2.png")} />
