@@ -3,12 +3,19 @@ import "./style.css";
 import MainButton from "../../../components/Admin/MainButton";
 import Table from "../../../components/Admin/Table";
 import ButtonListClass from "../../../components/Admin/ButtonListClass";
-import { useContext } from "react";
+import { useEffect, useContext } from "react";
 import EditClass from "../../../components/Admin/EditClass";
+import { headerText } from "../../../context/hederText";
 import NewTable from "../../../components/Admin/NewTable";
 
 // Creator : Team E - Chanan
 function Classroom() {
+  const [hederText, setHeaderText] = useContext(headerText);
+
+  useEffect(() => {
+    setHeaderText("");
+  }, []);
+
   const { popup, setPopup } = useContext(popupContext);
   function onSubmit(e) {
     e.preventDefault();
@@ -21,7 +28,9 @@ function Classroom() {
       <div className="container11">
         <div className="addButton">
           <MainButton
-            onClick={() => setPopup(<EditClass onSubmit={onSubmit} />)}
+            onClick={() =>
+              setPopup(<EditClass onSubmit={onSubmit}>Add class</EditClass>)
+            }
           >
             Add New Classroom
           </MainButton>

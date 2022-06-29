@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./style.css";
 
 // Creator : Team E
@@ -40,51 +40,51 @@ function Table() {
       classroom_ID: "#123.457",
       student: "30",
     },
-    // {
-    //   classroom_name: "class d",
-    //   classroom_ID: "#789.1223",
-    //   student: "35",
-    // },
-    // {
-    //   classroom_name: "class a",
-    //   classroom_ID: "#123.456",
-    //   student: "10",
-    // },
-    // {
-    //   classroom_name: "class b",
-    //   classroom_ID: "#789.1261",
-    //   student: "15",
-    // },
-    // {
-    //   classroom_name: "class c",
-    //   classroom_ID: "#789.1260",
-    //   student: "30",
-    // },
-    // {
-    //   classroom_name: "class d",
-    //   classroom_ID: "#789.1259",
-    //   student: "35",
-    // },
-    // {
-    //   classroom_name: "class a",
-    //   classroom_ID: "#789.1258",
-    //   student: "10",
-    // },
-    // {
-    //   classroom_name: "class b",
-    //   classroom_ID: "#789.1257",
-    //   student: "15",
-    // },
-    // {
-    //   classroom_name: "class c",
-    //   classroom_ID: "#789.1256",
-    //   student: "30",
-    // },
-    // {
-    //   classroom_name: "class d",
-    //   classroom_ID: "#789.1255",
-    //   student: "35",
-    // },
+    {
+      classroom_name: "class d",
+      classroom_ID: "#789.1223",
+      student: "35",
+    },
+    {
+      classroom_name: "class a",
+      classroom_ID: "#123.456",
+      student: "10",
+    },
+    {
+      classroom_name: "class b",
+      classroom_ID: "#789.1261",
+      student: "15",
+    },
+    {
+      classroom_name: "class c",
+      classroom_ID: "#789.1260",
+      student: "30",
+    },
+    {
+      classroom_name: "class d",
+      classroom_ID: "#789.1259",
+      student: "35",
+    },
+    {
+      classroom_name: "class a",
+      classroom_ID: "#789.1258",
+      student: "10",
+    },
+    {
+      classroom_name: "class b",
+      classroom_ID: "#789.1257",
+      student: "15",
+    },
+    {
+      classroom_name: "class c",
+      classroom_ID: "#789.1256",
+      student: "30",
+    },
+    {
+      classroom_name: "class d",
+      classroom_ID: "#789.1255",
+      student: "35",
+    },
   ];
   let studentList = [
     {
@@ -108,6 +108,19 @@ function Table() {
     console.log(newList);
     setList(newList);
   }
+
+  const paginationOrder = () => {
+    const pages = Math.ceil(list.length / 7);
+
+    const item = '';
+
+    console.log("pages:", pages);
+  }
+
+  useEffect(() => {
+    paginationOrder()
+
+  }, [list])
   return (
     <div className="table-container">
       <div className="head">

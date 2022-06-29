@@ -7,9 +7,9 @@
     font-weight: bold;
     box-sizing: border-box;
 
-    position: absolute;
-    width: 1201px;
-    height: auto;
+    position: relative;
+    width: 90%;
+    height: 40px;
     
     background: #f5f0f0;
     border: 1.5px solid #252525;
@@ -24,9 +24,8 @@
    
     box-sizing: border-box;
     position: absolute;
-    width: 90%;
-    max-width: 900px;
-   z-index:-1 ;
+    width:900px;
+    z-index:-1 ;
     height: 40px;
     
     background: #7D56A5;
@@ -39,7 +38,7 @@
     box-sizing: border-box;
 
     position: absolute;
-    width: 1201px;
+    width: 90%;
     height: auto;
     
     background: #f5f0f0;
@@ -54,7 +53,7 @@
     box-sizing: border-box;
     position: absolute;
     width: 90%;
-    max-width: 900px;
+   
     height: 40%;
     max-height: 40px;
     background: #7D56A5;

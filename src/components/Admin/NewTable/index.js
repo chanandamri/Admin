@@ -51,13 +51,13 @@ export default function NewTable(props) {
     },
   ];
   const { list, setList } = useContext(listControllerContext);
-  useEffect(() => {
-    setList(studentList);
-    console.log(list);
-  }, []);
   // let list = classList;
   let flag = false;
   if (Object.keys(list[0])[0] === "classroom_name") flag = true;
+
+  useEffect(() => {
+    setList(studentList);
+  }, []);
 
   return (
     <div className="table-container">
@@ -67,15 +67,15 @@ export default function NewTable(props) {
         {flag ? <ClassTitle /> : <StudentTitle />}
       </div>
       <br />
-      <div>
-        {list.map((v) => {
+      <div className="list">
+        {list.map((item) => {
           return (
             <>
               <div className="list">
                 {flag ? (
-                  <ClassRow keys={v.classroom_ID} value={v} />
+                  <ClassRow keys={item.classroom_ID} value={item} />
                 ) : (
-                  <StudentRow value={v} />
+                  <StudentRow value={item} />
                 )}
               </div>
               <br />
