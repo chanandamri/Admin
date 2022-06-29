@@ -11,21 +11,25 @@ function Login() {
 
   const Navigation = useNavigate()
   const users =[
-    {userType: "teacher",
+    {
+      firstName: "moshe",
+      lastName: "levi",
       email: "teacher@gmail.com",
       password:"teacher",
-      classrooms:["a","b"]
+      permissions: "teacher",
     },
-    {userType: "admin",
+    {
+      firstName: "yosi",
+      lastName: "sade",
       email: "admin@gmail.com",
       password:"admin",
-      teachers:["dany","moshe"]
+      permissions: "admin",
     }
   ]
 
   const validation = (email, password) => {
-    let userTecher = users.find((v)=>(email===(v.email) && password===(v.password) && "teacher"===(v.userType)))
-    let userAdmin = users.find((v)=>(email===(v.email) && password===(v.password) && "admin"===(v.userType)))
+    let userTecher = users.find((v)=>(email===(v.email) && password===(v.password) && "teacher"===(v.permissions)))
+    let userAdmin = users.find((v)=>(email===(v.email) && password===(v.password) && "admin"===(v.permissions)))
     // let userCheck = users.find((v)=>(email===(v.email) && password===(v.password)))
     if (userTecher){
       Navigation("/classrooms")
@@ -33,9 +37,10 @@ function Login() {
     }
     else if (userAdmin){
       Navigation("/admin")
+      setUser(userAdmin);
     }
     else {
-      console.log("no permission");
+      alert("no permission");
     }
   }
 
@@ -44,15 +49,8 @@ function Login() {
       const email = e.target.email.value
       const password = e.target.password.value
       validation(email, password)
+  }
       
-
-    return(
-        <>
-        {/* {console.log(email)}
-        {console.log(password)} */}
-        </>
-    )
-  };
 
   return (
     <>

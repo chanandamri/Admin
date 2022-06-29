@@ -11,7 +11,7 @@ import { studentDataContext } from "../../../context/Admin/StudentData";
 
 export default function NewTable(props) {
   let studentdatalocal = useContext(studentDataContext);
-  console.log("fakedata", studentdatalocal);
+  // console.log("fakedata", studentdatalocal);
 
   const { list, setList } = useContext(listControllerContext);
   const flags = props.typ;
@@ -29,7 +29,7 @@ export default function NewTable(props) {
   useEffect(() => {
     setList(props.list);
   }, []);
-  console.log(list);
+  // console.log(list);
 
   return (
     <div className="table-container">
@@ -49,13 +49,13 @@ export default function NewTable(props) {
         {list.map((item) => {
           return (
             <>
-              <div key={item.ClassRow} className="list">
+              <div className="list">
                 {flagClass ? (
                   <ClassRow key={item.classroom_ID} value={item} />
                 ) : flagStudent ? (
                   <StudentRow key={item.ClassRow} value={item} />
                 ) : flagTeacher ? (
-                  <TeacherRow value={item} />
+                  <TeacherRow key={"3"} value={item} />
                 ) : (
                   ""
                 )}
