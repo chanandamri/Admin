@@ -5,13 +5,10 @@ import './style.css'
 // Creator : Team E - Chanan
 function Popup() {
     const { popup, setPopup } = useContext(popupContext)
-
+console.log(popup);
     function closePopup() {
         setPopup(false)
     }
-
-
-
     return <div>
         <div className='popup-outbox'>
         </div>

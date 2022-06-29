@@ -7,24 +7,84 @@ function Table() {
   let classList = [
     {
       classroom_name: "class a",
-      classroom_ID: "#123.456",
+      classroom_ID: "#123.451",
       student: "10",
     },
     {
       classroom_name: "class b",
-      classroom_ID: "#123.789",
+      classroom_ID: "#123.452",
       student: "15",
     },
     {
       classroom_name: "class c",
-      classroom_ID: "#789.789",
+      classroom_ID: "#123.453",
       student: "30",
     },
     {
       classroom_name: "class d",
-      classroom_ID: "#789.1223",
+      classroom_ID: "#123.454",
       student: "35",
     },
+    {
+      classroom_name: "class a",
+      classroom_ID: "#123.455",
+      student: "10",
+    },
+    {
+      classroom_name: "class b",
+      classroom_ID: "#123.456",
+      student: "15",
+    },
+    {
+      classroom_name: "class c",
+      classroom_ID: "#123.457",
+      student: "30",
+    },
+    // {
+    //   classroom_name: "class d",
+    //   classroom_ID: "#789.1223",
+    //   student: "35",
+    // },
+    // {
+    //   classroom_name: "class a",
+    //   classroom_ID: "#123.456",
+    //   student: "10",
+    // },
+    // {
+    //   classroom_name: "class b",
+    //   classroom_ID: "#789.1261",
+    //   student: "15",
+    // },
+    // {
+    //   classroom_name: "class c",
+    //   classroom_ID: "#789.1260",
+    //   student: "30",
+    // },
+    // {
+    //   classroom_name: "class d",
+    //   classroom_ID: "#789.1259",
+    //   student: "35",
+    // },
+    // {
+    //   classroom_name: "class a",
+    //   classroom_ID: "#789.1258",
+    //   student: "10",
+    // },
+    // {
+    //   classroom_name: "class b",
+    //   classroom_ID: "#789.1257",
+    //   student: "15",
+    // },
+    // {
+    //   classroom_name: "class c",
+    //   classroom_ID: "#789.1256",
+    //   student: "30",
+    // },
+    // {
+    //   classroom_name: "class d",
+    //   classroom_ID: "#789.1255",
+    //   student: "35",
+    // },
   ];
   let studentList = [
     {
@@ -42,8 +102,8 @@ function Table() {
 
   function deleteClick(classroom_ID) {
     let newList = [];
-    list.forEach((v, index) => {
-      if (index != i) newList.push(v);
+    list.forEach((v) => {
+      if (v.classroom_ID != classroom_ID) newList.push(v);
     });
     console.log(newList);
     setList(newList);
@@ -56,12 +116,12 @@ function Table() {
           {title.map((v) => {
             return <div className="text_row">{v}</div>;
           })}
-          <div className="text_row"></div>
+          <div className="text_row">{flag ? <div> Action </div> : ""}</div>
         </div>
         <br />
       </div>
 
-      <div>
+      <div className="">
         {list.map((v, i) => {
           return (
             <>

@@ -1,1 +1,27 @@
-/* temp */
+
+
+
+.container11{
+    position: relative;
+    top: 50%;
+    /* width: 90%; */
+}
+.addButton{
+position: relative;
+top:10%;
+left:52%;
+}
+.mainTable2{
+    position: relative;
+  top:50%;
+  align-items: center;
+  /* left:10%; */
+  
+    
+}
+.buttonListClass{
+    position: absolute; 
+    top:100%; 
+    left:20%;
+}
+

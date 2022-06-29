@@ -6,8 +6,6 @@ import ButtonListClass from '../../../components/Admin/ButtonListClass'
 import { useContext } from 'react'
 import EditClass from '../../../components/Admin/EditClass'
 
-
-
 // Creator : Team E - Chanan
 function Classroom() {
     const { popup, setPopup } = useContext(popupContext)
@@ -19,18 +17,19 @@ function Classroom() {
     }
 
     return <>
-        <div className='addButton' >
-            <MainButton onClick={() => setPopup(<EditClass onSubmit={onSubmit} />)} >
-                Add New Classroom
-            </MainButton>
+        <div className='container11'>
+            <div className='addButton' >
+                <MainButton onClick={() => setPopup(<EditClass onSubmit={onSubmit} />)} >
+                    Add New Classroom
+                </MainButton>
+            </div>
+            <div className='mainTable' >
+                <Table />
+            </div>
+            <div className='buttonListClass' >
+                <ButtonListClass />
+            </div>
         </div>
-        <div className='mainTable' >
-            <Table />
-        </div>
-        <div className='buttonListClass' >
-            <ButtonListClass />
-        </div>
-
     </>
 }
 
