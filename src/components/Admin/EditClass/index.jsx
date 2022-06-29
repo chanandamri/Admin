@@ -6,13 +6,12 @@ import './style.css'
 
 
 // Creator : Team E - Chanan
-function EditClass(childer, props) {
+function EditClass(props) {
     const { popup, setPopup } = useContext(popupContext)
     const dummyvalues = ["ClassA", "ClassB", "ClassC", "ClassD"]
 
     function test(e) {
         e.preventDefault()
-        console.log("   EditClass");
         setPopup(false)
     }
     return <div>

@@ -10,6 +10,7 @@ function Popup() {
         setPopup(false)
     }
     return <div>
+        <div id="overlay" className='active'></div>
         <div className='popup-outbox'>
         </div>
         <div className='popup-inbox'>
@@ -23,7 +24,6 @@ function Popup() {
             </div>
             {popup}
         </div>
-        <div id="overlay"></div>
     </div >
 }
 export default Popup
