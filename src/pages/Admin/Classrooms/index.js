@@ -1,21 +1,47 @@
 import { popupContext } from '../../../context/Admin/Popup'
 import './style.css'
 import MainButton from '../../../components/Admin/MainButton'
-import Table from '../../../components/Admin/Table'
 import ButtonListClass from '../../../components/Admin/ButtonListClass'
-import { useEffect, useContext } from 'react'
+import { useEffect, useContext, useState } from 'react'
 import EditClass from '../../../components/Admin/EditClass'
 import { headerText } from '../../../context/hederText'
 import { userContext } from '../../../context/Admin/User'
+import React from 'react'
+import NewTable from '../../../components/Admin/NewTable'
 
-// Creator : Team E - Chanan
+
+//Creator : Team E - Chanan
 function Classroom() {
+  const [hederText, setHeaderText] = useContext(headerText);
+  let classList = [
+    {
+      classroom_name: "class a",
+      classroom_ID: "#123.456",
+      student: "10",
+      bla: "bla",
+    },
+    {
+      classroom_name: "class b",
+      classroom_ID: "#123.789",
+      student: "15",
+    },
+    {
+      classroom_name: "class c",
+      classroom_ID: "#789.789",
+      student: "30",
+    },
+    {
+      classroom_name: "class d",
+      classroom_ID: "#789.1223",
+      student: "35",
+    },
+  ];
+  useEffect(() => {
+    setHeaderText("");
+  }, []);
 
     const {user} = useContext(userContext)
     console.log("classroom",user);
-
-
-    const [hederText, setHeaderText] = useContext(headerText);
     
     useEffect(()=>{
         setHeaderText("")
@@ -36,15 +62,16 @@ if (!user) return (<div>no user</div>)
                     Add New Classroom
                 </MainButton>
             </div>
-            <div className='mainTable' >
-                <Table />
-            </div>
-            <div className='buttonListClass' >
-                <ButtonListClass />
-            </div>
+           
+        </div>
+        <div className="mainTable">
+          <NewTable list={classList} typ={"class"} />
+        </div>
+        <div className="buttonListClass">
+          <ButtonListClass />
         </div>
     </>
+  
 }
 
-
-export default Classroom
+export default Classroom;

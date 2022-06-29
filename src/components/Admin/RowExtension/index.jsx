@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import Graphs from './Graphs'
 import './style.css'
+import React from 'react'
 
 
 
