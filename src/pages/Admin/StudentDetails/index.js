@@ -1,4 +1,6 @@
 import { useEffect, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { userContext } from "../../../context/Admin/User";
 import { headerText } from "../../../context/hederText";
 import "./style.css";
 // import assessment graph component
@@ -18,6 +20,12 @@ export default function StudentDetails() {
     });
     setHeaderText("Student Details");
   }, []);
+
+  const { user } = useContext(userContext);
+  const NoPermission = useNavigate()
+    useEffect(() => {
+      if (!(user.permissions ==="teacher") ) return (NoPermission("/login"));
+    },[])
 
   return (
     <>

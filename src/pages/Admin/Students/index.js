@@ -6,6 +6,8 @@ import { headerText } from "../../../context/hederText";
 import NewTable from "../../../components/Admin/NewTable";
 import React from "react";
 import { studentDataContext } from "../../../context/Admin/StudentData";
+import { userContext } from "../../../context/Admin/User";
+import { useNavigate } from "react-router-dom";
 
 // Creator : Team E - Chanan
 function Students() {
@@ -40,6 +42,13 @@ function Students() {
     setHeaderText("");
   }, []);
   setHeaderText("student");
+
+  const { user } = useContext(userContext);
+  const NoPermission = useNavigate()
+    useEffect(() => {
+      if (!(user.permissions ==="teacher") ) return (NoPermission("/login"));
+    },[])
+    
   return (
     <>
       <div className="container11">
