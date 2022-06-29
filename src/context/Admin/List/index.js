@@ -1,3 +1,3 @@
 import { createContext } from "react";
 
-export const listControllerContext = createContext();
+export const listControllerContext = createContext(["dfgh"]);

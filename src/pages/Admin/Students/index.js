@@ -5,6 +5,7 @@ import { useEffect, useContext } from "react";
 import { headerText } from "../../../context/hederText";
 import NewTable from "../../../components/Admin/NewTable";
 import React from "react";
+import { studentDataContext } from "../../../context/Admin/StudentData";
 
 // Creator : Team E - Chanan
 function Students() {
@@ -31,15 +32,19 @@ function Students() {
       focus: "3",
     },
   ];
+  let studentdatalocal = useContext(studentDataContext);
+  const studentData = ("fakedata", studentdatalocal).studentData;
+  const usersDetails = studentData.usersDetails;
+
   useEffect(() => {
     setHeaderText("");
   }, []);
-
+  setHeaderText("student");
   return (
     <>
       <div className="container11">
         <div className="mainTable">
-          <NewTable list={studentList} typ={"student"} />
+          <NewTable list={usersDetails} typ={"student"} />
         </div>
         <div className="buttonListClass">
           <ButtonListClass />
