@@ -15,12 +15,12 @@ export default function Addteacherpopup() {
     const isFormValid = () => {
         const { firstName, lastName, email, password } = formData;
 
-        return (
-            firstName?.match(/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z])$/) &&
-            lastName?.match(/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z])$/) &&
-            email?.match(/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+\.[a-zA-z]{2,3}$/) &&
-            password?.match(/^(?=.\d)(?=.[a-z])(?=.[A-Z])(?=.[a-zA-Z]).{8,}$/)
-        )
+        // return (
+        //     firstName?.match(/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z])$/) &&
+        //     lastName?.match(/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z])$/) &&
+        //     email?.match(/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+\.[a-zA-z]{2,3}$/) &&
+        //     password?.match(/^(?=.\d)(?=.[a-z])(?=.[A-Z])(?=.[a-zA-Z]).{8,}$/)
+        // )
     }
 
     const onChange = (e) => {

@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 //Creator : Team E - Chanan
 function Classroom() {
   const [hederText, setHeaderText] = useContext(headerText);
-  const [classList, setClassList] = useState([]);
+  const [classList, setClassList] = useState([{}]);
 
   let classLis = [
     {
@@ -94,45 +94,46 @@ function Classroom() {
     setHeaderText("");
     setClassList(classLis);
   }, []);
+  console.log(classList);
 
-  const { user } = useContext(userContext);
+  const { user } = useContext(userContext)
   const NoPermission = useNavigate();
   useEffect(() => {
-    if (!(user.permissions === "teacher")) return NoPermission("/login");
+    // if (!(user.permissions === "teacher")) return NoPermission("/login");
   }, []);
 
   useEffect(() => {
     setHeaderText("");
   }, []);
 
-  const { popup, setPopup } = useContext(popupContext);
+  useEffect(() => {
+    setHeaderText("")
+  }, [])
+  let [pageActive, setPageActive] = useState(1)
+  const { popup, setPopup } = useContext(popupContext)
   function onSubmit(e) {
     e.preventDefault();
     console.log("i'm changing the server");
     setPopup(false);
   }
+  // if (!user) return (<div>no user</div>)
+  return <>
+    <div className='container11'>
+      <div className='addButton' >
+        <MainButton onClick={() => setPopup(<EditClass onSubmit={onSubmit} >Add class</EditClass>)} >
+          Add New Classroom
+        </MainButton>
+      </div>
 
-  return (
-    <>
-      <div className="container11">
-        <div className="addButton">
-          <MainButton
-            onClick={() =>
-              setPopup(<EditClass onSubmit={onSubmit}>Add class</EditClass>)
-            }
-          >
-            Add New Classroom
-          </MainButton>
-        </div>
-      </div>
-      <div className="mainTable">
-        <NewTable list={classList} typ={"class"} />
-      </div>
-      <div className="buttonListClass">
-        <ButtonListClass pages1="8" />
-      </div>
-    </>
-  );
+    </div>
+    <div className="mainTable">
+      <NewTable list={classList} typ={"class"} pageActive={pageActive - 1} />
+    </div>
+    <div className="buttonListClass">
+      <ButtonListClass pages1={Math.ceil(classList.length / 3) + 1} setPageActive={setPageActive} pageActive={pageActive} />
+    </div>
+  </>
+
 }
 
 export default Classroom;
