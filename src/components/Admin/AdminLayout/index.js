@@ -6,31 +6,31 @@ import Popup from "../Popup";
 import "./style.css";
 import NewTable from "../NewTable";
 import { listControllerContext } from "../../../context/Admin/List";
+import { headerText } from "../../../context/hederText";
 // Creator : Team E - bezalel
 function AdminLayout() {
-    const [popup, setPopup] = useState(true);
-    const [list, setList] = useState([{}]);
+  const [popup, setPopup] = useState(false);
+  const [list, setList] = useState([{}]);
+  const setHeaderText = useState('')
+  return (
+    <>
+      <popupContext.Provider value={{ popup, setPopup }}>
+        <listControllerContext.Provider value={{ list, setList }}>
+          <headerText.Provider value={setHeaderText}>
 
-    return (
-        <>
-            <popupContext.Provider value={{ popup, setPopup }}>
-                <listControllerContext.Provider value={{ list, setList }}>
-                    <div>
-                        <Header />
-                    </div>
+            <div>
+              <Header />
+            </div>
 
-                    <div>
-                        <Main />
-                    </div>
-                    <div>
-                        <NewTable />
-                    </div>
-
-                    <div className="popUp">{popup && <Popup />}</div>
-                </listControllerContext.Provider>
-            </popupContext.Provider>
-        </>
-    );
+            <div>
+              <Main />
+            </div>
+            <div className="popUp">{popup && <Popup />}</div>
+          </headerText.Provider>
+        </listControllerContext.Provider>
+      </popupContext.Provider>
+    </>
+  );
 }
 
 export default AdminLayout;

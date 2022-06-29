@@ -28,7 +28,7 @@ function EditClass(props) {
                 </select>
             </div>
             <div className='popup-fotter'>
-                <MainButton value="cancel">Cancel</MainButton>
+                <MainButton >Cancel</MainButton>
                 <MainButton >Add</MainButton>
             </div>
         </form>
