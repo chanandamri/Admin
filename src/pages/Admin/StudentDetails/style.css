@@ -23,15 +23,31 @@
     border: 1.5px solid #252525;
     border-radius: 20px;
 }
-.activityByDate-assessment{
+.activityByDate::assessment{
     background: #F2994A;
 }
-.activityByDate-TF{
+.activityByDate::TF{
     background: #35BFEA;
 }
-.activityByDate-TR{
+.activityByDate::TR{
     background: #7D56A5;
 }
-/* .date{}
-.activity{}
-.result{} */
+.date{
+    margin-right: auto;
+    margin-left: 100px;
+
+}
+/* .activity{} */
+.result{
+
+    margin-left: auto;
+    margin-right: 100px;
+}
+.imgraf{
+    width: 70%;
+    margin: auto;
+}
+.aout{
+display: flex;
+margin-top: 20px;
+}

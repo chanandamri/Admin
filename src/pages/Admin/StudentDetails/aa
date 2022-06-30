@@ -1,0 +1,41 @@
+<div className="student-details-body">
+        <h3 className="title">Student Name</h3>
+        <h1 className="name">
+          {student.firstName} {student.lastName}
+        </h1>
+        <div className="graphs">
+          <div className="assessment">
+            <h5>assessment</h5>
+            <div>graph</div>
+            {/* <h5>assessment {assessment}</h5> */}
+            {/* <assessment graph component({assessment.graph})> */}
+          </div>
+          <div className="reading">
+            <h5>reading</h5>
+            <div>graph</div>
+            {/* <div className="Graph">
+                          <div className="DashGraph   back-purple left">
+                            <Graph d={student.TR.value} labs={student.TR.date} />
+                          </div> */}
+          </div>
+          {/* <h5>reading {TR}</h5> */}
+          {/* <TR graph component({TR.graph})> */}
+        </div>
+        <div className="focus">
+          <h5>focus</h5>
+          <div>graph</div>
+          {/* <h5>focus {TF}</h5> */}
+          {/* <TF graph component({TF.graph})> */}
+        </div>
+      </div>
+      <hr />
+      <div>
+        {/* {allActivities.map((v) => {
+              return ( */}
+        <ActivityByDate
+          //   key={v}
+          details={student}
+        />
+        {/* );
+            })} */}
+      </div>

@@ -4,66 +4,47 @@ import { userContext } from "../../../context/Admin/User";
 import { headerText } from "../../../context/hederText";
 import "./style.css";
 import React from "react";
+import { studentDataContext } from "../../../context/Admin/StudentData";
+// import Graph from "../../../components/Admin/GraphDashboard/Graph";
+
 // import assessment graph component
 
 // import TF graph component
 // import TR graph component
 
 // Creator : Team E - Ariel
-export default function StudentDetails() {
-  const { firstName, lastName, TR, TF, assessment } = useContext();
-  const allActivities = [...assessment, ...TR, ...TF];
-
+export default function StudentDetails(props) {
+  const { user } = useContext(userContext);
+  const NoPermission = useNavigate();
   const [hederText, setHeaderText] = useContext(headerText);
 
+  const fakeData = useContext(studentDataContext);
+  // console.log( "fake", fakeData);
+  const assessment = fakeData.studentData.assesmentResults; //sort
+  const student = fakeData.studentData.usersDetails[0];
+  const TRAnswers = fakeData.studentData.trainReading[0];
+
+  //   const { firstName, lastName, TR, TF, assessment } = props;
+  const allActivities = [...assessment, ...student.TR, ...student.TF];
+  console.log(allActivities);
+  {
+    /* <div className="text_row">{value.TF[value.TF.length - 1].Value}</div> */
+  }
+
   useEffect(() => {
-    allActivities.sort((a, b) => {
+    console.log("asses", TRAnswers);
+    //   if (!(user.permissions === "teacher")) return (NoPermission("/login"));
+    setHeaderText("Student Details");
+    const sort = allActivities.sort((a, b) => {
       return new Date(a.date).getTime() - new Date(b.date).getTime();
     });
-    setHeaderText("Student Details");
+    console.log("sort", sort);
   }, []);
 
-  const { user } = useContext(userContext);
-  const NoPermission = useNavigate()
-  useEffect(() => {
-    if (!(user.permissions === "teacher")) return (NoPermission("/login"));
-  }, [])
-
   return (
-    <>
-      <div className="student-details-body">
-        <h3 className="title">Student Name</h3>
-        <h1 className="name">
-          {firstName} {lastName}
-        </h1>
-        <div className="graphs">
-          <div className="assessment">
-            <h5>assessment {assessment}</h5>
-            {/* <assessment graph component({assessment.graph})> */}
-          </div>
-          <div className="reading">
-            <h5>reading {TR}</h5>
-            {/* <TR graph component({TR.graph})> */}
-          </div>
-          <div className="focus">
-            <h5>focus {TF}</h5>
-            {/* <TF graph component({TF.graph})> */}
-          </div>
-          <hr />
-          <div>
-            {allActivities.map((v) => {
-              return (
-                <ActivityByDate
-                  key={v}
-                  details={v}
-                  className="activityByDate"
-                />
-              );
-            })}
-          </div>
-        </div>
-      </div>
-    </>
+    <div className="aout">
+      <img className="imgraf" src={require("./graf.png")} />
+    </div>
   );
 }
 
@@ -73,14 +54,16 @@ function ActivityByDate({ details }) {
       {
         <div
           className={
-            (details === "assessment" && "activityByDate-assessment") ||
-            (details === "TF" && "activityByDate-TF") ||
-            (details === "TR" && "activityByDate-TR")
+            "activityByDate"
+            // (details === "assessment" &&
+            //     "activityByDate::assessment") ||
+            // (details === "TF" && "activityByDate::activityByDate-TF") ||
+            // (details === "TR" && "activityByDate::activityByDate-TR")
           }
         >
-          <div className="date"></div>
-          <div className="activity"></div>
-          <div className="result"></div>
+          <div className="date">4/4/4</div>
+          <div className="activity">tf</div>
+          <div className="result">55</div>
           {details === "TR" && <div></div>}
         </div>
       }
