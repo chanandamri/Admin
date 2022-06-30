@@ -3,6 +3,7 @@ import { listControllerContext } from "../../../../context/Admin/List";
 import { popupContext } from "../../../../context/Admin/Popup";
 import EditClass from "../../EditClass";
 import MainButton from "../../MainButton";
+import React from "react";
 
 export default function ClassRow(v) {
   ///////

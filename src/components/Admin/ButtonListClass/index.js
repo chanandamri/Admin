@@ -29,10 +29,6 @@ let backimg = (
 );
 
 
-
-
-
-
 const creatList = (pages) => {
   let listbutton = [];
 
@@ -45,28 +41,16 @@ const creatList = (pages) => {
 
 // Creator : Team E - yosef schmidt
 function ButtonListClass(props) {
-  let [pageActive, setPageActive] = useState(1)
+
+  // console.log(props.pages1);
 
 
-  // function OneButtonListClass(txt, id, isactive) {
-  //   return (
-  //     <div className="box" id={id}>
-  //       <div className="backbox">
-  //         <div className={"upbox " + ((txt == isactive) ? "active" : "")}>
-  //           <div id="imagebacknext">{txt}</div>
-
-  //         </div>
-  //       </div>
-  //     </div>
-  //   );
-  // }
-
-  let listbutton = creatList(8)
+  let listbutton = creatList(props.pages1)
   return (
 
     <div className="muneList" >
 
-<div key={1} onClick={(e) => { setPageActive(pageActive-1); console.log(e.target.outerText); }} className="box" id={"nextlist"} >
+      <div key={1} onClick={(e) => { if (props.pageActive > 1) { props.setPageActive(props.pageActive - 1) }; console.log(props.pageActive); }} className="box" id={"nextlist"} >
         <div className="backbox">
           <div className={"upbox " + ((backimg == 0) ? "active" : "")}>
             <div id="imagebacknext">{backimg}</div>
@@ -78,9 +62,9 @@ function ButtonListClass(props) {
 
         return (
           <div >
-            <div key={v} onClick={(e) => { setPageActive(e.target.outerText); console.log(e.target.outerText); }} className="box" id={v.id} >
+            <div key={v} onClick={(e) => { props.setPageActive(+e.target.outerText); console.log(props.pageActive); }} className="box" id={v.id} >
               <div className="backbox">
-                <div className={"upbox " + ((v == pageActive) ? "active" : "")}>
+                <div className={"upbox " + ((v == props.pageActive) ? "active" : "")}>
                   <div id="imagebacknext">{v}</div>
                 </div>
               </div>
@@ -92,8 +76,13 @@ function ButtonListClass(props) {
 
 
 
-<div key={1} onClick={(e) => { setPageActive(pageActive+1); console.log(e.target.outerText); }} className="box" id={"backinlist"} >
-      
+      <div key={2} onClick={(e) => {
+        if (props.pageActive < props.pages1)
+          props.setPageActive(props.pageActive + 1);
+        console.log(props.pageActive);
+      }}
+        className="box" id={"backinlist"} >
+
         <div className="backbox">
           <div className={"upbox " + ((nextimg == 0) ? "active" : "")}>
             <div id="imagebacknext">{nextimg}</div>
@@ -108,3 +97,18 @@ function ButtonListClass(props) {
   );
 }
 export default ButtonListClass;
+
+
+
+  // function OneButtonListClass(txt, id, isactive) {
+  //   return (
+  //     <div className="box" id={id}>
+  //       <div className="backbox">
+  //         <div className={"upbox " + ((txt == isactive) ? "active" : "")}>
+  //           <div id="imagebacknext">{txt}</div>
+
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  // }

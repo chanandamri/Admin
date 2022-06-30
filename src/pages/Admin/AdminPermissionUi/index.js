@@ -7,6 +7,7 @@ import NewTable from "../../../components/Admin/NewTable";
 import ButtonListClass from "../../../components/Admin/ButtonListClass";
 import { userContext } from "../../../context/Admin/User";
 import { useNavigate } from "react-router-dom";
+import React from "react";
 
 // Creator : Team E - Ariel
 export default function AdminPermissionUi() {
@@ -36,8 +37,10 @@ export default function AdminPermissionUi() {
       <div className="container11">
         <div className="addButton">
           <MainButton
-            onClick={() =>
+            onClick={() => {
+              console.log("add teacher");
               setPopup(<Addteacherpopup>Add Teacher</Addteacherpopup>)
+            }
             }
           >
             Add New Teacher

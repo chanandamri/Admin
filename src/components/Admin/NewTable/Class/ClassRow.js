@@ -24,7 +24,7 @@ export default function ClassRow(v) {
     list.forEach((v) => {
       if (v.classroom_ID != classroom_ID) newList.push(v);
     });
-    console.log(newList);
+    // console.log(newList);
     if (newList.length) {
       setList(newList);
     } else {

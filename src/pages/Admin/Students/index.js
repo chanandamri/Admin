@@ -46,7 +46,7 @@ function Students() {
   const { user } = useContext(userContext);
   const NoPermission = useNavigate()
     useEffect(() => {
-      if (!(user.permissions ==="teacher") ) return (NoPermission("/login"));
+      // if (!(user.permissions ==="teacher") ) return (NoPermission("/login"));
     },[])
     
   return (
