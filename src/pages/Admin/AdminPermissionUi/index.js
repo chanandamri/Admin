@@ -1,7 +1,7 @@
 import MainButton from "../../../components/Admin/MainButton";
 import Addteacherpopup from "../../../components/Admin/AddTeacherPopup";
 import { popupContext } from "../../../context/Admin/Popup";
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import { headerText } from "../../../context/hederText";
 import NewTable from "../../../components/Admin/NewTable";
 import ButtonListClass from "../../../components/Admin/ButtonListClass";
@@ -13,12 +13,28 @@ import React from "react";
 export default function AdminPermissionUi() {
   const { popUp, setPopup } = useContext(popupContext);
   const [headerTxt, setHeaderText] = useContext(headerText);
+  let [pageActive, setPageActive] = useState(1);
   let list = [
     {
-      teacherName: "avi",
+      teacherName: "avi1",
     },
     {
-      teacherName: "ban",
+      teacherName: "ban2",
+    },
+    {
+      teacherName: "can",
+    },
+    {
+      teacherName: "dan",
+    },
+    {
+      teacherName: "ean",
+    },
+    {
+      teacherName: "fan",
+    },
+    {
+      teacherName: "gan",
     },
   ];
   useEffect(() => {
@@ -26,11 +42,11 @@ export default function AdminPermissionUi() {
   }, []);
 
   const { user } = useContext(userContext);
-  const NoPermission = useNavigate()
+  const NoPermission = useNavigate();
   console.log(user);
-    useEffect(() => {
-      if (!(user.permissions ==="admin") ) return (NoPermission("/login"));
-    },[])
+  useEffect(() => {
+    if (!(user.permissions === "admin")) return NoPermission("/login");
+  }, []);
 
   return (
     <>
@@ -39,18 +55,21 @@ export default function AdminPermissionUi() {
           <MainButton
             onClick={() => {
               console.log("add teacher");
-              setPopup(<Addteacherpopup>Add Teacher</Addteacherpopup>)
-            }
-            }
+              setPopup(<Addteacherpopup>Add Teacher</Addteacherpopup>);
+            }}
           >
             Add New Teacher
           </MainButton>
         </div>
         <div className="mainTable">
-          <NewTable list={list} typ={"teacher"} />
+          <NewTable list={list} typ={"teacher"} pageActive={pageActive - 1} />
         </div>
         <div className="buttonListClass">
-          <ButtonListClass />
+          <ButtonListClass
+            pages1={Math.ceil(list.length / 3) - 1}
+            setPageActive={setPageActive}
+            pageActive={pageActive}
+          />
         </div>
       </div>
     </>

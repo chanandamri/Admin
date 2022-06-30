@@ -46,7 +46,7 @@ export default function NewTable(props) {
       </div>
       <br />
       <div className="list">
-        {list.map((item) => {
+      {list.slice(props.pageActive * 4, props.pageActive * 4 + 4).map((item) => {
           return (
             <>
               <div key={item.ClassRow} className="list">
