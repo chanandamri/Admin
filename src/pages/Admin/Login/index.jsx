@@ -42,6 +42,9 @@ function Login() {
     else {
       alert("no permission");
     }
+
+    
+    safeLocalStoreg(user)
   }
 
   const onSubmit = (e) => {
@@ -50,22 +53,17 @@ function Login() {
       const password = e.target.password.value
       validation(email, password)
   }
+
+  const safeLocalStoreg = (user) =>{
+    console.log(user)}
       
 
   return (
     <>
       <div className="all-login">
         <div className="image">
-          <img
-            className="image 1"
-            src={require("./image 1.png")}
-            alt="image 1"
-          />
-          <img
-            className="image 2"
-            src={require("./image 2.png")}
-            alt="image 2"
-          />
+          <img className="image 1" src={require("./image 1.png")} alt="image 1"/>
+          <img className="image 2" src={require("./image 2.png")} alt="image 2"/>
         </div>
         <h1>Welcome back!</h1>
         </div>
@@ -76,8 +74,7 @@ function Login() {
               <label name="email">Email id</label>
               <input type="text" name="email" /> <br />
               <input type="password" name="password" placeholder="Password" />
-              <Link className="forgot-password" to="/password">
-                {" "}
+              <Link className="forgot-password" to="/password">{" "}
                 <br />
                 Forgot Password?
               </Link>
