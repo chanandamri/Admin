@@ -8,47 +8,24 @@ import { headerText } from "../../../context/hederText";
 import { userContext } from "../../../context/Admin/User";
 import React from "react";
 import NewTable from "../../../components/Admin/NewTable";
-import { useNavigate } from "react-router-dom";
-
 //Creator : Team E - Chanan
 function Classroom() {
   const [hederText, setHeaderText] = useContext(headerText);
-  let classList = [
+  const [classList, setClassList] = useState([]);
+
+  let classLis = [
     {
       classroom_name: "class a",
       classroom_ID: "#123.456",
-      student: "10",
-      bla: "bla",
-    },
-    {
-      classroom_name: "class b",
-      classroom_ID: "#123.789",
-      student: "15",
-    },
-    {
-      classroom_name: "class c",
-      classroom_ID: "#789.789",
-      student: "30",
-    },
-    {
-      classroom_name: "class d",
-      classroom_ID: "#789.1223",
-      student: "35",
     },
   ];
   useEffect(() => {
     setHeaderText("");
+    setClassList(classLis);
   }, []);
 
   const { user } = useContext(userContext);
-  const NoPermission = useNavigate()
-    useEffect(() => {
-        if (!(user.permissions ==="teacher") ) return (NoPermission("/login"));
-    },[])
-
-  useEffect(() => {
-    setHeaderText("");
-  }, []);
+  // console.log("classroom", user);
 
   const { popup, setPopup } = useContext(popupContext);
   function onSubmit(e) {
@@ -56,9 +33,7 @@ function Classroom() {
     console.log("i'm changing the server");
     setPopup(false);
   }
-
-  
-  
+  // if (!user) return (<div>no user</div>)
   return (
     <>
       <div className="container11">
@@ -81,5 +56,4 @@ function Classroom() {
     </>
   );
 }
-
 export default Classroom;

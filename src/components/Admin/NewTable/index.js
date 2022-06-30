@@ -5,9 +5,14 @@ import ClassRow from "./Class/ClassRow";
 import "./style.css";
 import StudentRow from "./Student/StudentRow";
 import { listControllerContext } from "../../../context/Admin/List";
-import React from "react";
+import TeacherTitle from "./Teachers/TeacherTitle";
+import TeacherRow from "./Teachers/TeacherRow";
+import { studentDataContext } from "../../../context/Admin/StudentData";
 
 export default function NewTable(props) {
+  let studentdatalocal = useContext(studentDataContext);
+  console.log("fakedata", studentdatalocal);
+
   const { list, setList } = useContext(listControllerContext);
   const flags = props.typ;
   let flagClass = false,
@@ -20,12 +25,11 @@ export default function NewTable(props) {
   } else {
     flagTeacher = true;
   }
-  // let flag = false;
 
   useEffect(() => {
-    // console.log("dd",props.list);
-    // setList(props.list);
+    setList(props.list);
   }, []);
+  console.log(list);
 
   return (
     <div className="table-container">
@@ -35,26 +39,23 @@ export default function NewTable(props) {
         ) : flagStudent ? (
           <StudentTitle />
         ) : flagTeacher ? (
-          ""
+          <TeacherTitle />
         ) : (
           ""
         )}
       </div>
       <br />
       <div className="list">
-        {/* {list.filter((v, i) => (i > props.pageActive-2 && i < 5 )).map((item) => { */}
-
-        {list.slice(props.pageActive * 4, props.pageActive * 4 + 4).map((item) => {
+        {list.map((item) => {
           return (
             <>
-
               <div key={item.ClassRow} className="list">
                 {flagClass ? (
                   <ClassRow key={item.classroom_ID} value={item} />
                 ) : flagStudent ? (
-                  <StudentRow key={item.ClassRow} value={item} />
+                  <StudentRow key={item.ClassRow}  value={item} />
                 ) : flagTeacher ? (
-                  ""
+                  <TeacherRow value={item} />
                 ) : (
                   ""
                 )}
