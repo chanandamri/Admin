@@ -3,6 +3,7 @@ import { popupContext } from '../../../context/Admin/Popup'
 import MainButton from '../MainButton'
 import './style.css'
 import React from 'react'
+import Input from '../../Input'
 
 // Creator : Team E - Chanan
 function EditClass(props) {
@@ -29,13 +30,8 @@ function EditClass(props) {
     return <div>
         <form onSubmit={onSubmit}>
             <div>
-                <label className='input'>
-                    classroom name:
-                    <input name="className" required type="text" className='inputButton' />
-                </label>
-                <div >Classroom ID
-                    <div className='classIDtitle'>{newID}</div>
-                </div>
+                <Input legend={"Classroom name"} name="className" valid={"yes"} />
+                <Input legend={"Classroom ID"} value={newID} valid={"yes"} />
             </div>
             <div className='popup-fotter'>
                 <MainButton color="white" onClick={closePopup}>Cancel</MainButton>
