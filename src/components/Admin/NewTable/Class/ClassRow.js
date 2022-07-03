@@ -6,7 +6,7 @@ import MainButton from "../../MainButton";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function ClassRow(v) {
+export default function ClassRow(props) {
   const navigation = useNavigate();
   ///////
   function onSubmit(e) {
@@ -16,13 +16,14 @@ export default function ClassRow(v) {
   }
   ////
 
-  const value = v.value;
+  const value = props.value;
   const { popup, setPopup } = useContext(popupContext);
   const { list, setList } = useContext(listControllerContext);
   function deleteClick(classroom_ID) {
     let newList = [];
     list.forEach((v) => {
       if (v.classroom_ID != classroom_ID) newList.push(v);
+      // props.setPageActive();
     });
     // console.log(newList);
     if (newList.length) {

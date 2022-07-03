@@ -22,7 +22,7 @@ function AdminLayout() {
   const [studentData, setstudentData] = useState(fakeData);
 
   return (
-    <>
+    <div>
       <popupContext.Provider value={{ popup, setPopup }}>
         <listControllerContext.Provider value={{ list, setList }}>
           <headerText.Provider value={setHeaderText}>
@@ -43,7 +43,7 @@ function AdminLayout() {
           </headerText.Provider>
         </listControllerContext.Provider>
       </popupContext.Provider>
-    </>
+    </div>
   );
 }
 

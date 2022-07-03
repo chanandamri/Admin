@@ -49,18 +49,16 @@ export default function AdminPermissionUi() {
   }, []);
 
   return (
-    <>
-      <div className="container11">
-        <div className="addButton">
-          <MainButton
-            onClick={() => {
-              console.log("add teacher");
-              setPopup(<Addteacherpopup>Add Teacher</Addteacherpopup>);
-            }}
-          >
-            Add New Teacher
-          </MainButton>
-        </div>
+    <div>
+      <div className="addButton">
+        <MainButton
+          onClick={() => {
+            console.log("add teacher");
+            setPopup(<Addteacherpopup>Add Teacher</Addteacherpopup>);
+          }}
+        >
+          Add New Teacher
+        </MainButton>
         <div className="mainTable">
           <NewTable list={list} typ={"teacher"} pageActive={pageActive - 1} />
         </div>
@@ -72,6 +70,6 @@ export default function AdminPermissionUi() {
           />
         </div>
       </div>
-    </>
+    </div>
   );
 }

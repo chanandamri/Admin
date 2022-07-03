@@ -53,21 +53,19 @@ function Students() {
 
   return (
     <>
-      <div className="container11">
-        <div className="mainTable">
-          <NewTable
-            list={usersDetails}
-            typ={"student"}
-            pageActive={pageActive - 1}
-          />
-        </div>
-        <div className="buttonListClass">
-          <ButtonListClass
-            pages1={Math.ceil(usersDetails.length / 3)}
-            setPageActive={setPageActive}
-            pageActive={pageActive}
-          />
-        </div>
+      <div className="mainTable">
+        <NewTable
+          list={usersDetails}
+          typ={"student"}
+          pageActive={pageActive - 1}
+        />
+      </div>
+      <div className="buttonListClass">
+        <ButtonListClass
+          pages1={Math.ceil(usersDetails.length / 3)}
+          setPageActive={setPageActive}
+          pageActive={pageActive}
+        />
       </div>
     </>
   );

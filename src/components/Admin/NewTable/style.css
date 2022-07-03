@@ -6,7 +6,6 @@
     font-weight: bold;
     box-sizing: border-box;
 padding-right: 2%;
-    width: 1201px;
     height: auto;
     
     background: #f5f0f0;
@@ -32,23 +31,12 @@ padding-right: 2%;
     box-sizing: border-box;
 
     /* position: absolute; */
-    width: 1201px;
+  
     height: auto;
     
     background: #f5f0f0;
     border: 1.5px solid #252525;
     border-radius: 20px;
-}
-.rowBox::before{
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: "";
-    width: 1201px;
-    height: auto;
-    background-color: #7b56a5;
-    border-radius: 20px;
-    z-index: -1;
 }
 /* .right.rowBox::before{
     transform: rotate(2.3deg);
@@ -71,6 +59,10 @@ padding-right: 2%;
 }
 .dropdownIng{
     transform: rotate(58deg)
+}
+.table-container{
+    height: 65vh;
+    top: 70%;
 }
 
 /* .row_s{

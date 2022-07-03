@@ -106,19 +106,22 @@ function Classroom() {
 
   return (
     <>
-      <div className="container11">
-        <div className="addButton">
-          <MainButton
-            onClick={() =>
-              setPopup(<EditClass onSubmit={onSubmit}>Add class</EditClass>)
-            }
-          >
-            Add New Classroom
-          </MainButton>
-        </div>
+      <div className="addButton">
+        <MainButton
+          onClick={() =>
+            setPopup(<EditClass onSubmit={onSubmit}>Add class</EditClass>)
+          }
+        >
+          Add New Classroom
+        </MainButton>
       </div>
       <div className="mainTable">
-        <NewTable list={classList} typ={"class"} pageActive={pageActive - 1} />
+        <NewTable
+          list={classList}
+          typ={"class"}
+          pageActive={pageActive - 1}
+          setPageActive={setPageActive}
+        />
       </div>
       <div className="buttonListClass">
         <ButtonListClass
